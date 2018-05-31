@@ -1,0 +1,10 @@
+
+# angular cliのインストール
+npm install -g @angular/cli
+
+# 新たにコンポーネント作成
+ng new component-name
+
+# 起動の仕方
+ng serve --open
+
