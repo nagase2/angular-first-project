@@ -25,7 +25,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
   onSelect(hero: Hero): void {
-    this.messageService.add('heroが選択されたよ。');
+    this.messageService.add(hero.name + ':が選択されたよ。');
     this.selectedHero = hero;
   }
   getHeroes(): void {
@@ -33,12 +33,3 @@ export class HeroesComponent implements OnInit {
         .subscribe(heroes => this.heroes = heroes);
   }
 }
-
-
-// constructor(private messageService: MessageService) { }
-
-// getHeroes(): Observable<Hero[]> {
-//   // TODO: send the message _after_ fetching the heroes
-//   this.messageService.add('HeroService: fetched heroes');
-//   return of(MY_HEROES);
-// }
