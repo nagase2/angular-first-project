@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
 import { HeroService } from '../hero.service';
+import { MessageService } from './../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -17,12 +18,14 @@ export class HeroesComponent implements OnInit {
   };
   heroes: Hero[];
   selectedHero: Hero;
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService,
+    private messageService: MessageService) { }
 
   ngOnInit() {
     this.getHeroes();
   }
   onSelect(hero: Hero): void {
+    this.messageService.add('heroが選択されたよ。');
     this.selectedHero = hero;
   }
   getHeroes(): void {
@@ -30,3 +33,12 @@ export class HeroesComponent implements OnInit {
         .subscribe(heroes => this.heroes = heroes);
   }
 }
+
+
+// constructor(private messageService: MessageService) { }
+
+// getHeroes(): Observable<Hero[]> {
+//   // TODO: send the message _after_ fetching the heroes
+//   this.messageService.add('HeroService: fetched heroes');
+//   return of(MY_HEROES);
+// }
