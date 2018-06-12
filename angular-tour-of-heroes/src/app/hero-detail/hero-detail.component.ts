@@ -30,5 +30,8 @@ export class HeroDetailComponent implements OnInit {
     //console.log("バックがおされました。");
     this.location.back();
   }
+  saveNow(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+  }
 
 }
