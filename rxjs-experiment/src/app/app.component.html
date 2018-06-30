@@ -1,10 +1,10 @@
-
-
 <div>
   <mat-toolbar color="primary">
-    <span><mat-icon>mood</mat-icon></span>
+    <span>
+      <mat-icon>mood</mat-icon>
+    </span>
 
-    <span>Yay, Material in Angular 2!</span>
+    <span>１Hello えま！ in Angular 2!</span>
 
     <button mat-icon-button [mat-menu-trigger-for]="menu">
       <mat-icon>more_vert</mat-icon>
@@ -21,16 +21,18 @@
     <button mat-raised-button color="primary">The</button>
     <button mat-raised-button color="accent">Buttons</button>
   </mat-card>
+  <hr/>
 
   <span class="done">
-    <button mat-fab>
-      <mat-icon>check circle</mat-icon>
+    <button>
+    <mat-icon>check circle</mat-icon>
     </button>
   </span>
 </div>
 
-<section>
-  <input placeholder="search" type = "search" 
-  [(ngModel)] = "searchTerm" (ngModlelChange)="newSearch"/>  
-</section>
 
+<section>
+
+  <input placeholder="search" type="search" [(ngModel)]="searchTerm" (ngModlelChange)="newSearch()" />
+
+</section>

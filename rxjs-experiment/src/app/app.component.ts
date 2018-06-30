@@ -15,11 +15,12 @@ export class AppComponent {
   constructor(public http: Http) {
 
   }
-  newSearch(term) {
+  public newSearch(term) {
     // this.results = this.http.get(`curl https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc`)
     // .map()
-    //curl https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
+    // curl https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
 
+    console.log(term);
 
   }
 }
