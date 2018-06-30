@@ -1,4 +1,7 @@
 
+# 新しいアプリを作る
+ng new
+
 # angular cliのインストール
 npm install -g @angular/cli
 
@@ -7,4 +10,12 @@ ng new component-name
 
 # 起動の仕方
 ng serve --open
+
+
+
+
+
+
+
+https://angular.io/tutorial
 

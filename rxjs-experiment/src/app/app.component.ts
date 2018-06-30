@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,5 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
-  abc = 'xxxkk';
+  title = 'app';
 }
