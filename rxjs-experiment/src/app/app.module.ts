@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {
-  MatToolbar
-  // and so on...
-} from '@angular/material';
+
+import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -20,10 +18,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MatToolbar,
+    MaterialModule,
     BrowserAnimationsModule
   ], exports: [
-    MatToolbar
+   // MatToolbar
   ],
   providers: [],
   bootstrap: [AppComponent]
