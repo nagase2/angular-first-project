@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-nagase',
-    template: '!!!<h1>nagasecomp {{title}} XXXX</h1>',
+    template: '<h1> {{title}} dcccx</h1>',
     styleUrls: ['./app.component.css']
 })
 export class NagaseComponent {
-    title = 'this is nagase app';
+    title = 'this is NG Component';
 }

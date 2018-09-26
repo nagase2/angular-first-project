@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms'; 
+
 import { NagaseComponent } from './nagase.component';
 import { MenuComponent } from './menu/menu.component';
 
@@ -11,7 +13,8 @@ import { MenuComponent } from './menu/menu.component';
     , NagaseComponent, MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent, NagaseComponent, MenuComponent]
