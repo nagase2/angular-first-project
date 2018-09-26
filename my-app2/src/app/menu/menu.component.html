@@ -11,7 +11,7 @@
 </div>
 
 <ul class="heroes">
-  <li *ngFor="let user of heroes" (mouseover)="onSelect(hero)">
+  <li *ngFor="let user of heroes" (click)="onSelect(hero)">
     <span class="badge">{{user.id}}</span>: {{user.name}}
   </li>
 </ul>

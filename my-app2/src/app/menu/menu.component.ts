@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HEROES } from './mock-menus';
+//import { MenuService } from '../menu.service';
+import {Hero} from '../hero';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +13,7 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
   private _menuMessage = "ようこそメニューへ";
-  private heroes = HEROES;
+  private heroes: HEROES;
 
   grandMenu = {
     firstMenu: 'menu1',
