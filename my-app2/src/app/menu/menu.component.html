@@ -1,0 +1,26 @@
+<h1>menu title</h1>
+<div>
+  <label>name:
+    <input [(ngModel)]="grandMenu.firstMenu" placeholder="name">
+  </label>
+</div>
+<div>
+  <label>name2:
+    <input [(ngModel)]="grandMenu.secondMenu" placeholder="name">
+  </label>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let user of heroes" (click)="onSelect(hero)">
+    <span class="badge">{{user.id}}</span>: {{user.name}}
+  </li>
+</ul>
+<p>
+  {{menuMessage}}<br />
+  {{getMenu('xxxxx',23)}}
+  {{grandMenu.firstMenu}}
+  {{grandMenu.secondMenu | uppercase}}
+
+  <input [value]="grandMenu.firstMenu"
+       (input)="grandMenu.firstMenu=$event.target.value" >
+</p>
