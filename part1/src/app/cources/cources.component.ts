@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
     <button
     (click)="onSave($event)"
     class="btn btn-primary"  [class.active]="isActive"
-     [style.backgroundColor]="isActive?'blue':'white'">sssxxxxx</button>
+     [style.backgroundColor]="isActive?'blue':'white'">ボタン</button>
      <br>
      <input (keyup.enter)="onKeyUp()"/>
      `,
