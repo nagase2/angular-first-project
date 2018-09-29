@@ -9,20 +9,15 @@
 </i>
 
 
-<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+<br>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-star fa-stack-1x"></i>
+  <i [ngClass]="{'fa fa-ban fa-stack-2x text-danger': isFavorite}"></i>
+</span>
 
-ddddxxx
 
-<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-aria-expanded="false"></button>
 
-<i class="fas fa-lightbulb"></i>
 
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default">Left</button>
-    <button type="button" class="btn btn-default">Middle</button>
-    <button type="button" class="btn btn-default">Right</button>
-  </div>
 
   
   <ul class="fa-ul">
@@ -32,7 +27,4 @@ aria-expanded="false"></button>
     <li><i class="fa-li fa fa-square"></i>in lists</li>
   </ul>
 
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-star fa-stack-1x"></i>
-    <i class="fa fa-ban fa-stack-2x text-danger"></i>
-  </span>
+  
