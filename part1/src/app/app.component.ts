@@ -12,7 +12,9 @@ export class AppComponent {
   title = 'Angular';
   post = {
     title: 'my title',
-    isFavorite: false
+    isFavorite: false,
+    likeCount: 5,
+    isLiked: false
   };
 
   onFavoriteChanged(newValues: ChangedArgsValues) {

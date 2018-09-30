@@ -7,22 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LikeComponent implements OnInit {
   @Input() likeCount: number;
-  @Input() youLiked = false;
-  constructor() { }
+  @Input() youLiked: boolean;
 
+  constructor() { }
   ngOnInit() {
   }
 
   likeButtonClicked() {
-    if (this.youLiked === false) {
-      this.likeCount++;
-      this.youLiked = !this.youLiked;
-    } else {
-      this.likeCount--;
-      this.youLiked = !this.youLiked;
-    }
+    this.likeCount += (this.youLiked) ? -1 : +1;
+    this.youLiked = !this.youLiked;
 
   }
 
 }
- 

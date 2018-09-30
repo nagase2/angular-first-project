@@ -4,7 +4,11 @@
 (change1)="onFavoriteChanged($event)"
 >
 </app-favorite>
-<app-like></app-like>
+
+<app-like
+ [likeCount]="post.likeCount"
+ [youLiked]="false"
+></app-like>
 <app-panel>
   <div class="heading">head...</div>
   <div class="body">
