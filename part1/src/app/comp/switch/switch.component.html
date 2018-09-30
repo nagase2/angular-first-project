@@ -1,0 +1,19 @@
+<h3>switch component
+
+</h3>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewMode=='map'" href="#" (click)="changeMode('map')">new components</a>
+  </li>
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='list'}"  href="#" (click)="changeMode('list')">old components</a>
+  <li class="nav-item"></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">
+    <ng-content select=".tab1"></ng-content>
+  </div>
+  <div *ngSwitchCase="'list'">
+    <ng-content select=".tab2"></ng-content>
+  </div>
+  <div *ngSwitchDefault>this is default content</div>
+</div>

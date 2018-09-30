@@ -1,22 +1,24 @@
 <h1>{{ title }}</h1>
 
-<app-favorite [isFavorite]="post.isFavorite" 
-(change1)="onFavoriteChanged($event)"
->
+<app-favorite [isFavorite]="post.isFavorite" (change1)="onFavoriteChanged($event)">
 </app-favorite>
 
-<app-like
- [likeCount]="post.likeCount"
- [youLiked]="false"
-></app-like>
-<app-panel>
-  <div class="heading">head...</div>
-  <div class="body">
-  <h2>title</h2>
-  <p>tcccccccc</p>
+<app-switch>
+  <div class="tab1">
+    <app-like [likeCount]="post.likeCount" [youLiked]="false"></app-like>
   </div>
-</app-panel>
+  <div class="tab2">
+    <app-title-case></app-title-case>
+    <app-cources></app-cources>
+    <app-panel>
+      <div class="heading">head...</div>
+      <div class="body">
+        <h2>title</h2>
+        <p>thisi is body article</p>
+      </div>
+    </app-panel>
+  </div>
+</app-switch>
 
-<app-title-case></app-title-case>
-<app-cources></app-cources>
+
 

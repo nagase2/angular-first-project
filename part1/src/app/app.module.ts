@@ -10,6 +10,7 @@ import { TitleCaseComponent } from './title-case/title-case.component';
 import { TitleCasePipe } from './title-case/title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './comp/like/like.component';
+import { SwitchComponent } from './comp/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LikeComponent } from './comp/like/like.component';
     TitleCaseComponent,
     TitleCasePipe,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule, FormsModule
