@@ -11,6 +11,7 @@ import { TitleCasePipe } from './title-case/title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './comp/like/like.component';
 import { SwitchComponent } from './comp/switch/switch.component';
+import { ForComponent } from './for/for.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SwitchComponent } from './comp/switch/switch.component';
     TitleCasePipe,
     PanelComponent,
     LikeComponent,
-    SwitchComponent
+    SwitchComponent,
+    ForComponent
   ],
   imports: [
     BrowserModule, FormsModule

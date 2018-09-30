@@ -13,19 +13,10 @@
 <br>
 <span class="fa-stack fa-lg">
   <i class="fa fa-star fa-stack-1x"></i>
-  <i [ngClass]="{'fa fa-ban fa-stack-2x text-danger': isFavorite}"></i>
+  <i [ngClass]="{'fa fa-ban fa-stack-2x text-danger': isFavorite}"
+     [ngStyle]="{'color': isFavorite ? 'green' : 'red' }"
+  ></i>
 </span>
 
-
-
-
-
-  
-  <ul class="fa-ul">
-    <li><i class="fa-li fa fa-check-square"></i>List icons</li>
-    <li><i class="fa-li fa fa-check-square"></i>can be used</li>
-    <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
-    <li><i class="fa-li fa fa-square"></i>in lists</li>
-  </ul>
 
   
