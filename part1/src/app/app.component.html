@@ -1,11 +1,11 @@
+<h1>{{ title }}</h1>
 
- <h1>{{ title }}</h1>
-
- 
-<app-favorite>
+<app-favorite [isFavorite]="post.isFavorite" 
+(change2)="onFavoriteChanged($event)"
+>
 </app-favorite>
 <app-title-case></app-title-case>
 
 
-  <app-cources></app-cources>
-  <app-authors></app-authors>
+<app-cources></app-cources>
+<app-authors></app-authors>

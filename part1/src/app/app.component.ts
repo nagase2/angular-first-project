@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+  post = {
+    title: 'my title',
+    isFavorite: false
+  };
+
+  onFavoriteChanged(newValue) {
+    console.log('favorite changed ' + newValue);
+  }
 }
