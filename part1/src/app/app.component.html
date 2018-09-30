@@ -1,12 +1,18 @@
 <h1>{{ title }}</h1>
 
-<h3>this is h3 for app comp </h3>
 <app-favorite [isFavorite]="post.isFavorite" 
 (change1)="onFavoriteChanged($event)"
 >
 </app-favorite>
+
+<app-panel>
+  <div class="heading">head...</div>
+  <div class="body">
+  <h2>title</h2>
+  <p>tcccccccc</p>
+  </div>
+</app-panel>
+
 <app-title-case></app-title-case>
-
-
 <app-cources></app-cources>
 

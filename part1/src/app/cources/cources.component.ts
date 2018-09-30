@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cources',
-  template: `<hr>
+  template: `<h3>cources</h3>
     <button class="btn btn-primary" [class.active]="isActive">なんにもボタン</button>
     <button
     (click)="onSave($event)"
