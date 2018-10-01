@@ -3,17 +3,24 @@
 </h3>
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link" [class.active]="viewMode=='map'" href="#" (click)="changeMode('map')">new components</a>
+    <a class="nav-link" [class.active]="viewMode=='one'" href="#" (click)="changeMode('one')">one</a>
   </li>
-    <a class="nav-link" [ngClass]="{'active ':viewMode=='list'}"  href="#" (click)="changeMode('list')">old components</a>
-  <li class="nav-item"></li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='two'}"  href="#" (click)="changeMode('two')">two</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" [ngClass]="{'active ':viewMode=='three'}"  href="#" (click)="changeMode('three')">three</a>
+    </li>
 </ul>
 <div [ngSwitch]="viewMode">
-  <div *ngSwitchCase="'map'">
+  <div *ngSwitchCase="'one'">
     <ng-content select=".tab1"></ng-content>
   </div>
-  <div *ngSwitchCase="'list'">
+  <div *ngSwitchCase="'two'">
     <ng-content select=".tab2"></ng-content>
+  </div>
+  <div *ngSwitchCase="'three'">
+      <ng-content select=".tab3"></ng-content>
   </div>
   <div *ngSwitchDefault>this is default content</div>
 </div>

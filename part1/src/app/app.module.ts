@@ -12,6 +12,7 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './comp/like/like.component';
 import { SwitchComponent } from './comp/switch/switch.component';
 import { ForComponent } from './for/for.component';
+import { SignupFormComponent } from './comp/signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ForComponent } from './for/for.component';
     PanelComponent,
     LikeComponent,
     SwitchComponent,
-    ForComponent
+    ForComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule, FormsModule

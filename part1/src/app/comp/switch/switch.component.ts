@@ -11,7 +11,7 @@ export class SwitchComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.viewMode = 'map';
+    this.viewMode = 'three';
   }
   changeMode(mode: string) {
     this.viewMode = mode;
