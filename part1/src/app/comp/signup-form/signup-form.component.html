@@ -2,8 +2,13 @@
     <div class="form-group">
         <label for="username">Username</label>
         <input formControlName="username" id="username" type="text" class="form-control">
-        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">Username
-            is required.</div>
+        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+            <div *ngIf="this.myform.get('username').errors.required">Username is required.</div>
+            <div *ngIf="username.errors.minlength">user name should be more than {{username.errors.minlength.requiredLength}}.</div>
+            <div *ngIf="username.errors.maxlength">user name should be less than {{username.errors.maxlength.requiredLength}}</div>
+            <div *ngIf="username.errors.cannotContainSpace">can not contain space in username.</div>
+
+        </div>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
