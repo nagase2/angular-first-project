@@ -1,18 +1,29 @@
-<form [formGroup]="myform">
+<form [formGroup]="myform" (ngSubmit)="login()">
+
+    <div *ngIf="myform.errors" class="alert alert-danger">username or password is invalid</div>
     <div class="form-group">
         <label for="username">Username</label>
         <input formControlName="username" id="username" type="text" class="form-control">
+
+        <div *ngIf="username.pending">checking ....</div>
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
             <div *ngIf="this.myform.get('username').errors.required">Username is required.</div>
-            <div *ngIf="username.errors.minlength">user name should be more than {{username.errors.minlength.requiredLength}}.</div>
-            <div *ngIf="username.errors.maxlength">user name should be less than {{username.errors.maxlength.requiredLength}}</div>
+            <div *ngIf="username.errors?.minlength">user name should be more than
+                {{username.errors.minlength.requiredLength}}.</div>
+            <div *ngIf="username.errors.maxlength">user name should be less than
+                {{username.errors.maxlength.requiredLength}}</div>
             <div *ngIf="username.errors.cannotContainSpace">can not contain space in username.</div>
-
+            <div *ngIf="username.errors.cannotContainAAA">can not contain AAA.</div>
+            <div *ngIf="username.errors['shouldBeUnique']">use id should be uniquie.</div>
         </div>
+        
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <input formControlName="password" id="password" type="text" class="form-control">
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+            <div *ngIf="password?.errors['required']">Username is required.</div>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
     </div>
-    <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>
