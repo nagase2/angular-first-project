@@ -13,6 +13,7 @@ import { LikeComponent } from './comp/like/like.component';
 import { SwitchComponent } from './comp/switch/switch.component';
 import { ForComponent } from './for/for.component';
 import { SignupFormComponent } from './comp/signup-form/signup-form.component';
+import { NewCourseFormComponent } from './comp/new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignupFormComponent } from './comp/signup-form/signup-form.component';
     LikeComponent,
     SwitchComponent,
     ForComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ChangedArgsValues } from './favorite/favorite.component';
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
