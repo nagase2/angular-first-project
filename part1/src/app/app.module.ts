@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -14,6 +15,7 @@ import { SwitchComponent } from './comp/switch/switch.component';
 import { ForComponent } from './for/for.component';
 import { SignupFormComponent } from './comp/signup-form/signup-form.component';
 import { NewCourseFormComponent } from './comp/new-course-form/new-course-form.component';
+import { PostComponent } from './comp/post/post.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,11 @@ import { NewCourseFormComponent } from './comp/new-course-form/new-course-form.c
     SwitchComponent,
     ForComponent,
     SignupFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    PostComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
