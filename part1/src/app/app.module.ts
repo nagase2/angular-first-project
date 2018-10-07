@@ -1,3 +1,4 @@
+import { PostService } from './common/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +37,7 @@ import { PostComponent } from './comp/post/post.component';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

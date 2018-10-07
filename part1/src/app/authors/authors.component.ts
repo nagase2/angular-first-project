@@ -1,4 +1,4 @@
-import { ListService } from '../comp/list.service';
+import { ListService } from '../common/list.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
