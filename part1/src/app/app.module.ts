@@ -1,6 +1,8 @@
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 import { PostService } from './common/post.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -36,10 +38,18 @@ import { MyFollowerService } from './common/my-follower.service';
     SignupFormComponent,
     NewCourseFormComponent,
     PostComponent,
-    MyFollowersComponent
+    MyFollowersComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
+    BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: LikeComponent },
+      { path: 'switch', component: SwitchComponent },
+      { path: 'follower', component: MyFollowersComponent },
+      { path: 'profile/:username', component: SwitchComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [PostService, MyFollowerService],
   bootstrap: [AppComponent]

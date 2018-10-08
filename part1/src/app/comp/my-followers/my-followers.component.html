@@ -1,3 +1,9 @@
-<ul *ngFor="let follower of followers">
-  <li>{{follower.id}}</li>
-</ul>
+
+<h4 class="component-title">followers component</h4>
+<div class="media" *ngFor="let follower of followers">
+    <img class="mr-3 avator" src="{{follower.avatar_url}}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0">{{follower.login}}</h5>
+      <a href="{{follower.html_url}}">{{follower.html_url}}</a>  
+    </div>
+  </div>
