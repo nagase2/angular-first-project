@@ -17,7 +17,7 @@ export class SwitchParentsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFavoriteChanged(newValues: ChangedArgsValues) {
+  onFavoriteChanged(newValues: any) {
     console.log(newValues);
   }
 
