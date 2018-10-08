@@ -50,7 +50,7 @@ import { MyProfileComponent } from './comp/my-profile/my-profile.component';
     RouterModule.forRoot([
       { path: '', component: LikeComponent },
       { path: 'switch', component: SwitchParentsComponent },
-      { path: 'followers/:username', component: MyProfileComponent },
+      { path: 'followers/:id', component: MyProfileComponent },
       { path: 'followers', component: MyFollowersComponent },
       { path: '**', component: NotFoundComponent }
     ])
