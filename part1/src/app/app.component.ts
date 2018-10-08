@@ -9,14 +9,7 @@ import { ChangedArgsValues } from './comp/favorite/favorite.component';
 })
 export class AppComponent {
   title = 'Angular';
-  post = {
-    title: 'my title',
-    isFavorite: false,
-    likeCount: 5,
-    isLiked: false
-  };
 
-  onFavoriteChanged(newValues: ChangedArgsValues) {
-    console.log(newValues);
-  }
+
+
 }

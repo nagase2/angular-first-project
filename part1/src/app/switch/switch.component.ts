@@ -15,6 +15,7 @@ export class SwitchComponent implements OnInit {
     this.viewMode = 'five';
   }
   changeMode(mode: string) {
+    console.log(mode + "が選択されました");
     this.viewMode = mode;
   }
 
