@@ -12,7 +12,7 @@ export class SwitchComponent implements OnInit {
 
   ngOnInit() {
     //ここで初期ページを切り替え
-    this.viewMode = 'five';
+    this.viewMode = 'one';
   }
   changeMode(mode: string) {
     console.log(mode + "が選択されました");

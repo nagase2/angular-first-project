@@ -22,6 +22,7 @@ import { PostComponent } from './comp/post/post.component';
 import { MyFollowersComponent } from './comp/my-followers/my-followers.component';
 import { MyFollowerService } from './common/my-follower.service';
 import { SwitchParentsComponent } from './switch-parents/switch-parents.component';
+import { MyProfileComponent } from './comp/my-profile/my-profile.component';
 
 
 @NgModule({
@@ -41,15 +42,16 @@ import { SwitchParentsComponent } from './switch-parents/switch-parents.componen
     PostComponent,
     MyFollowersComponent,
     NotFoundComponent,
-    SwitchParentsComponent
+    SwitchParentsComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
     RouterModule.forRoot([
       { path: '', component: LikeComponent },
       { path: 'switch', component: SwitchParentsComponent },
-      { path: 'follower', component: MyFollowersComponent },
-      { path: 'profile/:username', component: SwitchComponent },
+      { path: 'followers/:username', component: MyProfileComponent },
+      { path: 'followers', component: MyFollowersComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
