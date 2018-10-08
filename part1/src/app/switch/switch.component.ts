@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SwitchComponent implements OnInit {
   viewMode: string;
   constructor() {
-   }
+  }
 
   ngOnInit() {
-    this.viewMode = 'one';
+    //ここで初期ページを切り替え
+    this.viewMode = 'five';
   }
   changeMode(mode: string) {
     this.viewMode = mode;

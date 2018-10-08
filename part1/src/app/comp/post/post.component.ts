@@ -1,4 +1,4 @@
-import { PostService } from './../../common/post.service';
+import { PostService } from '../../common/post.service';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 

@@ -17,6 +17,9 @@ import { ForComponent } from './for/for.component';
 import { SignupFormComponent } from './comp/signup-form/signup-form.component';
 import { NewCourseFormComponent } from './comp/new-course-form/new-course-form.component';
 import { PostComponent } from './comp/post/post.component';
+import { MyFollowersComponent } from './comp/my-followers/my-followers.component';
+import { MyFollowerService } from './common/my-follower.service';
+
 
 @NgModule({
   declarations: [
@@ -32,12 +35,13 @@ import { PostComponent } from './comp/post/post.component';
     ForComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    PostComponent
+    PostComponent,
+    MyFollowersComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
   ],
-  providers: [PostService],
+  providers: [PostService, MyFollowerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

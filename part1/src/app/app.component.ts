@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChangedArgsValues } from './favorite/favorite.component';
+import { ChangedArgsValues } from './comp/favorite/favorite.component';
 
 
 @Component({

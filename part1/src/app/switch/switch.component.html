@@ -6,11 +6,17 @@
     <a class="nav-link" [class.active]="viewMode=='one'" href="#" (click)="changeMode('one')">one</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [ngClass]="{'active ':viewMode=='two'}"  href="#" (click)="changeMode('two')">two</a>
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='two'}" href="#" (click)="changeMode('two')">two</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" [ngClass]="{'active ':viewMode=='three'}"  href="#" (click)="changeMode('three')">three</a>
-    </li>
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='three'}" href="#" (click)="changeMode('three')">three</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='four'}" href="#" (click)="changeMode('four')">four</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active ':viewMode=='five'}" href="#" (click)="changeMode('five')">five</a>
+  </li>
 </ul>
 <div [ngSwitch]="viewMode">
   <div *ngSwitchCase="'one'">
@@ -20,7 +26,13 @@
     <ng-content select=".tab2"></ng-content>
   </div>
   <div *ngSwitchCase="'three'">
-      <ng-content select=".tab3"></ng-content>
+    <ng-content select=".tab3"></ng-content>
+  </div>
+  <div *ngSwitchCase="'four'">
+    <ng-content select=".tab4"></ng-content>
+  </div>
+  <div *ngSwitchCase="'five'">
+    <ng-content select=".tab5"></ng-content>
   </div>
   <div *ngSwitchDefault>this is default content</div>
 </div>
