@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements onInit {
+export class PostComponent implements OnInit {
 
   posts: any[];
   constructor(private postService: PostService) {
