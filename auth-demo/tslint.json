@@ -80,7 +80,7 @@
     ],
     "radix": true,
     "semicolon": [
-      "always"
+      false
     ],
     "triple-equals": [
       true,
