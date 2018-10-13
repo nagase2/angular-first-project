@@ -17,10 +17,12 @@ export class LoginComponent {
   signIn(credentials) {
     this.authService.login(credentials)
       .subscribe(result => {
-        if (result)
+        if (result) {
+          console.log('/ に移動します。')
           this.router.navigate(['/'])
-        else {
-          console.log('login failed.')
+
+        } else {
+          console.log('login failed.' + credentials.toString())
           this.invalidLogin = true;
         }
 
