@@ -1,6 +1,6 @@
-import { Router } from '@angular/router';
+import { Router, RouterState, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from './auth.service';
-import { Injectable } from '@angular/core';
+import { Injectable, state } from '@angular/core';
 import { CanActivate } from '@angular/router';
 
 /**
@@ -20,13 +20,14 @@ export class AuthGuardService implements CanActivate {
    * truenならOK、falseならNG…
    * このクラスをapp.module.tsで指定することで、このチェックを有効化することができる。
    */
-  canActivate() {
+  canActivate(route, state: RouterStateSnapshot) {
     console.log('can activate method called.')
     if (this.authService.isLoggedIn()) {
       return true;
     }
+
     //失敗したらこのURLに飛ばす
-    this.router.navigate(['/login'], { queryParams: { aaa: 'aaaa' } })
+    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } })
     return false;
   }
 }

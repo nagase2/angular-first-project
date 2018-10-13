@@ -19,9 +19,10 @@ export class LoginComponent {
     this.authService.login(credentials)
       .subscribe(result => {
         if (result) {
+          let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')
           //もし、リダイレクト先のURLがあれば、そこに飛ばす。
-          console.log('/ に移動します。')
-          this.router.navigate(['/'])
+          console.log(returnUrl + 'に移動します。')
+          this.router.navigate([returnUrl || '/'])
 
         } else {
           console.log('login failed.' + credentials.toString())
