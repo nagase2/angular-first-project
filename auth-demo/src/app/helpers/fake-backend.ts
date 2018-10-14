@@ -31,18 +31,14 @@ export function fakeBackendFactory(
         }
       }
 
-
-
       // 
       // Fake implementation of /api/orders
       //
       if (connection.request.url.endsWith('/api/orders') &&
         connection.request.method === RequestMethod.Get) {
         if (connection.request.headers.get('Authorization') === 'Bearer ' + token) {
-
           connection.mockRespond(new Response(
-            new ResponseOptions({ status: 200, body: [1, 2, 3, 4, 5, 6, 'one'] })
-            
+            new ResponseOptions({ status: 200, body: [1, 2, 3, 4, 5, 6] })
           ));
         } else {
           connection.mockRespond(new Response(
@@ -50,10 +46,13 @@ export function fakeBackendFactory(
           ));
         }
       }
-
-
-
-    }, 1000);
+      if (connection.request.url.endsWith('/api/test')) {
+        // && connection.request.method === RequestMethod.Get) {
+        connection.mockRespond(new Response(
+          new ResponseOptions({ status: 200, body: ['a', 'b', 'c'] })
+        ));
+      }
+    }, 500);
   });
 
   return new Http(backend, options);
