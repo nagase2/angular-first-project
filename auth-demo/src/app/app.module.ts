@@ -45,7 +45,7 @@ import { NoAccessComponent } from './no-access/no-access.component';
   ],
   providers: [
     OrderService,
-
+    AUTH_PROVIDERS,
     AuthService,
     AuthGuardService,
     // For creating a mock back-end. You don't need these in a real app. 

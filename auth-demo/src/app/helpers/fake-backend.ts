@@ -39,8 +39,10 @@ export function fakeBackendFactory(
       if (connection.request.url.endsWith('/api/orders') &&
         connection.request.method === RequestMethod.Get) {
         if (connection.request.headers.get('Authorization') === 'Bearer ' + token) {
+
           connection.mockRespond(new Response(
-            new ResponseOptions({ status: 200, body: [1, 2, 3] })
+            new ResponseOptions({ status: 200, body: [1, 2, 3, 4, 5, 6, 'one'] })
+            
           ));
         } else {
           connection.mockRespond(new Response(
