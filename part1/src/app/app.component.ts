@@ -8,7 +8,7 @@ import { ChangedArgsValues } from './comp/favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular';
+  title = 'Inverness';
 
 
 
