@@ -19,3 +19,9 @@ exec command below
 ```
 ngh
 ``` 
+
+## how to deploy onto firebase 
+exec the command below
+```
+ng build --prod && firebase deploy
+```
