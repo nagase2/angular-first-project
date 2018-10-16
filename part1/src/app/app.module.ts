@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { PostService } from './common/post.service';
@@ -5,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database'
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -47,6 +50,8 @@ import { MyProfileComponent } from './comp/my-profile/my-profile.component';
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: '', component: LikeComponent },
       { path: 'switch', component: SwitchParentsComponent },
