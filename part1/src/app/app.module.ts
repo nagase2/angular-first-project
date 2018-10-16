@@ -57,6 +57,7 @@ import { MyProfileComponent } from './comp/my-profile/my-profile.component';
       { path: 'switch', component: SwitchParentsComponent },
       { path: 'followers/:id/:username', component: MyProfileComponent },
       { path: 'followers', component: MyFollowersComponent },
+      { path: 'courses', component: CourcesComponent},
       { path: '**', component: NotFoundComponent }
     ])
   ],
@@ -64,3 +65,4 @@ import { MyProfileComponent } from './comp/my-profile/my-profile.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
