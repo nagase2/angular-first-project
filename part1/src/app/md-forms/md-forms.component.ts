@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-md-forms',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MdFormsComponent implements OnInit {
   checked = false;
-  interminatem = true;
+  indeterminate = true;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onchange(ind: MatCheckbox) {
+    console.log(ind.checked);
   }
 
 }

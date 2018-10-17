@@ -2,6 +2,6 @@
 
 <section class="first-section">
     <mat-checkbox class="first-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-    <mat-checkbox class="first-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+    <mat-checkbox id="x" class="first-margin" [(ngModel)]="indeterminate" (change)=onchange(ind) #ind>Indeterminate</mat-checkbox>
 </section>
 
