@@ -13,12 +13,12 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { CourcesComponent } from './cources/cources.component';
 import { FavoriteComponent } from './comp/favorite/favorite.component';
-import { TitleCaseComponent } from './title-case/title-case.component';
-import { TitleCasePipe } from './title-case/title-case.pipe';
+import { TitleCaseComponent } from './comp/title-case/title-case.component';
+import { TitleCasePipe } from './comp/title-case/title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './comp/like/like.component';
 import { SwitchComponent } from './switch/switch.component';
-import { ForComponent } from './for/for.component';
+import { ForComponent } from './comp/for/for.component';
 import { SignupFormComponent } from './comp/signup-form/signup-form.component';
 import { NewCourseFormComponent } from './comp/new-course-form/new-course-form.component';
 import { PostComponent } from './comp/post/post.component';
@@ -26,6 +26,8 @@ import { MyFollowersComponent } from './comp/my-followers/my-followers.component
 import { MyFollowerService } from './common/my-follower.service';
 import { SwitchParentsComponent } from './switch-parents/switch-parents.component';
 import { MyProfileComponent } from './comp/my-profile/my-profile.component';
+import { MdFormsComponent } from './md-forms/md-forms.component';
+import { TopComponent } from './top/top.component';
 
 
 @NgModule({
@@ -46,14 +48,17 @@ import { MyProfileComponent } from './comp/my-profile/my-profile.component';
     MyFollowersComponent,
     NotFoundComponent,
     SwitchParentsComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    MdFormsComponent,
+    TopComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
-      { path: '', component: LikeComponent },
+      { path: '', component: TopComponent },
+      { path: 'md-forms', component: MdFormsComponent},
       { path: 'switch', component: SwitchParentsComponent },
       { path: 'followers/:id/:username', component: MyProfileComponent },
       { path: 'followers', component: MyFollowersComponent },
