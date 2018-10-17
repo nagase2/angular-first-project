@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./md-forms.component.css']
 })
 export class MdFormsComponent implements OnInit {
+  checked = false;
+  interminatem = true;
 
   constructor() { }
 

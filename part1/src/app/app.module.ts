@@ -6,8 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -54,8 +56,10 @@ import { TopComponent } from './top/top.component';
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    MatCheckboxModule,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
       { path: 'md-forms', component: MdFormsComponent},

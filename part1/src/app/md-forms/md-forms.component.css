@@ -1,0 +1,10 @@
+.first-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.first-margin {
+    margin: 0 10px;
+}
