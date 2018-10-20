@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-md-forms',
@@ -7,11 +8,17 @@ import { MatCheckbox } from '@angular/material/checkbox';
   styleUrls: ['./md-forms.component.css']
 })
 export class MdFormsComponent implements OnInit, OnDestroy {
-  ngOnDestroy(): void {
-    console.log("on destoroy")
-  }
   checked = false;
+  // tslint:disable-next-line:member-ordering
   indeterminate = true;
+
+  favoriteSeason: string;
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+
+  ngOnDestroy(): void {
+    console.log('on destoroy')
+  }
+
 
   constructor() { }
 

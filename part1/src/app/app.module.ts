@@ -1,3 +1,4 @@
+
 import { environment } from './../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
@@ -6,10 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule, MatRadioModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -59,14 +60,14 @@ import { TopComponent } from './top/top.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatCheckboxModule,
+    MatCheckboxModule, MatRadioModule,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
-      { path: 'md-forms', component: MdFormsComponent},
+      { path: 'md-forms', component: MdFormsComponent },
       { path: 'switch', component: SwitchParentsComponent },
       { path: 'followers/:id/:username', component: MyProfileComponent },
       { path: 'followers', component: MyFollowersComponent },
-      { path: 'courses', component: CourcesComponent},
+      { path: 'courses', component: CourcesComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
