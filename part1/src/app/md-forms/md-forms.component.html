@@ -10,3 +10,17 @@
     <mat-radio-button value="2">Female</mat-radio-button>
 </mat-radio-group>
 
+<br>
+
+<mat-form-field>
+    <mat-select placeholder="Favorite food"  [formControl]="foodControl" required> 
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>  
+    <mat-error *ngIf="foodControl.hasError('required')">Please choose an animal</mat-error>
+    
+    <mat-hint>{{foodControl.value?.viewValue}}</mat-hint>
+
+  </mat-form-field>
