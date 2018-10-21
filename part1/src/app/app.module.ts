@@ -10,13 +10,14 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {
-  MatCheckboxModule, MatRadioModule, MatSelectModule,
-  MatSidenavModule, MatIconModule, MatToolbarModule,
-  MatOptionModule,
-  MatInputModule
-} from '@angular/material';
-
+// import {
+//   MatCheckboxModule, MatRadioModule, MatSelectModule,
+//   MatSidenavModule, MatIconModule, MatToolbarModule,
+//   MatOptionModule,
+//   MatInputModule
+// } from '@angular/material';
+import { MaterialModules
+} from './material-modules';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { CourcesComponent } from './cources/cources.component';
@@ -65,8 +66,7 @@ import { TopComponent } from './top/top.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatCheckboxModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatIconModule,
-    MatToolbarModule, MatSidenavModule, MatOptionModule, MatInputModule,
+    MaterialModules,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
       { path: 'md-forms', component: MdFormsComponent },
