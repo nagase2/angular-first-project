@@ -16,7 +16,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 //   MatOptionModule,
 //   MatInputModule
 // } from '@angular/material';
-import { MaterialModules
+import {
+  MaterialModules
 } from './material-modules';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -80,5 +81,8 @@ import { TopComponent } from './top/top.component';
   providers: [PostService, MyFollowerService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  mode = { value: 'side' };
+
+}
 
