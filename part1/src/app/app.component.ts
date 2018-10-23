@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ChangedArgsValues } from './comp/favorite/favorite.component';
+import { ChangedArgsValues, FavoriteComponent } from './comp/favorite/favorite.component';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { ChangedArgsValues } from './comp/favorite/favorite.component';
 })
 export class AppComponent {
   title = 'Inverness';
+
+
 
 
 

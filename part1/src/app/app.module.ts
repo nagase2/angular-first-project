@@ -38,6 +38,9 @@ import { SwitchParentsComponent } from './switch-parents/switch-parents.componen
 import { MyProfileComponent } from './comp/my-profile/my-profile.component';
 import { MdFormsComponent } from './md-forms/md-forms.component';
 import { TopComponent } from './top/top.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DialogComponent } from './comp/dialog/dialog.component';
+import { MatDialogRef } from '@angular/material';
 
 
 @NgModule({
@@ -60,7 +63,8 @@ import { TopComponent } from './top/top.component';
     SwitchParentsComponent,
     MyProfileComponent,
     MdFormsComponent,
-    TopComponent
+    TopComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -78,7 +82,12 @@ import { TopComponent } from './top/top.component';
       { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [PostService, MyFollowerService],
+  providers: [PostService, MyFollowerService, { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
+  entryComponents: [
+    //If you want to use component in the dialog, need to be written the name of the dialog here.
+    FavoriteComponent,
+    DialogComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

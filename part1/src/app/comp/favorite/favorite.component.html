@@ -1,22 +1,8 @@
-
-
-
-
 <h3>favorite</h3>
-<i class="fa fa-2x" 
-  [class.fa-star]="isFavorite"
-  [class.fa-star-o]="!isFavorite"
-(click)="onClick()" aria-hidden="true">
+<i class="fa fa-2x" [class.fa-star]="isFavorite" [class.fa-star-o]="!isFavorite" (click)="onClick()" aria-hidden="true">
 </i>
 
-
-<br>
 <span class="fa-stack fa-lg">
   <i class="fa fa-star fa-stack-1x"></i>
-  <i [ngClass]="{'fa fa-ban fa-stack-2x text-danger': isFavorite}"
-     [ngStyle]="{'color': isFavorite ? 'green' : 'red' }"
-  ></i>
+  <i [ngClass]="{'fa fa-ban fa-stack-2x text-danger': isFavorite}" [ngStyle]="{'color': isFavorite ? 'green' : 'red' }"></i>
 </span>
-
-
-  
