@@ -1,12 +1,13 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'app-cources',
   template: `<h3>courses</h3>
   <ul>
-    <li *ngFor="let item of courses | async">
-       {{ item | json }}
+    <li *ngFor="let item of courses$">
+       {{ item.value}}
     </li>
   </ul>
   `,
@@ -14,9 +15,13 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 })
 export class CourcesComponent implements OnInit {
   isActive = true;
-  constructor(db: AngularFireDatabase) {
-    db.list('/courses').valueChanges();
+  courses$: AngularFireList<any[]>;
+
+
+  constructor(private db: AngularFireDatabase) {
   }
+
+
   onSave($event) {
 
     console.log($event);
@@ -26,6 +31,9 @@ export class CourcesComponent implements OnInit {
     console.log('enter was pressed.');
   }
   ngOnInit() {
+    this.courses$ = this.db.list('/courses')
+
+    console.log(this.courses$)
   }
 
 }
