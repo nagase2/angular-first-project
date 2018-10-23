@@ -9,7 +9,8 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 export class DialogComponent implements OnInit {
   receivedData;
 
-  //MEMO: 
+  //MEMO: to receive value from caller, MAT_DIALOG_DATA have to be injected here.
+  // this is the simple form of injection token. 
   constructor(@Inject(MAT_DIALOG_DATA) myData: any) {
 
     console.log('data', myData);
