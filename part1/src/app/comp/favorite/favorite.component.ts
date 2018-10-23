@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-favorite',
@@ -12,8 +13,9 @@ export class FavoriteComponent implements OnInit {
   @Input('isFavorite') isFavorite: boolean;
   // tslint:disable-next-line:no-output-rename
   @Output('change1') change2 = new EventEmitter();
-  constructor() {
-    // this.isFavorite = true;
+  
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
   }
 
   ngOnInit() {

@@ -25,7 +25,7 @@ export class AppComponent {
     });
   }
   // navStart: Observable<NavigationStart>;
- 
+
   // constructor(private router: Router) {
   //   // Create a new Observable the publishes only the NavigationStart event
   //   this.navStart = router.events.pipe(

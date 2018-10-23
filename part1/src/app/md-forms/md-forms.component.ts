@@ -1,9 +1,9 @@
+import { CountService } from './../common/count.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-//import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { FavoriteComponent } from '../comp/favorite/favorite.component';
 import { MatDialog } from '@angular/material';
@@ -61,7 +61,11 @@ export class MdFormsComponent implements OnInit, OnDestroy {
 
   dialogResultValue: string;
 
-  constructor(private dialog: MatDialog) { }
+
+
+  constructor(private dialog: MatDialog, public countService: CountService) {
+   // this.countService = countService;
+  }
 
   /**
    * dialogを開きます。戻り値を受け取ってログに出します。
@@ -96,6 +100,10 @@ export class MdFormsComponent implements OnInit, OnDestroy {
     this.categories.filter(c => c !== category)
       .forEach(c => c['selected'] = false);
     category.selected = !category.selected;
+  }
+
+  incrementCount() {
+    this.countService.addCount();
   }
 
 

@@ -26,7 +26,7 @@
 </mat-form-field>
 
 <form class="example-form">
-  You can define input field this way<br>
+  <span class="headline">you can define input field this way</span><br>
   <mat-form-field class="example-full-width">
     <input ngModel #username="ngModel" name="username" matInput placeholder="username" required>
     <mat-hint>please input username here!</mat-hint>
@@ -71,7 +71,7 @@
   </button>&nbsp;
 
   <button (click)="openFavoriteInDialog()" color="accent" mat-raised-button>open favorite</button>&nbsp;
-  <button color="warn" mat-raised-button>warn</button>&nbsp;
+  <button (click)="incrementCount()" color="warn" mat-raised-button>count {{countService.count}}</button>&nbsp;
   <button matTooltip="これはツールチップです。ここに機能の説明などを書くことができます。太字はできる？" matTooltipPosition="right" color="primary" mat-fab>
     <mat-icon>face</mat-icon>
   </button>

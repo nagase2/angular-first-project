@@ -5,9 +5,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
   selector: 'app-cources',
   template: `<h3>courses</h3>
   <ul>
-    <li *ngFor="let item of courses | async">
-       {{ item | json }}
-    </li>
+  
   </ul>
   `,
   styleUrls: ['./cources.component.css']

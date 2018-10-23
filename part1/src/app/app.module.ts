@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { PostService } from './common/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
@@ -41,6 +41,7 @@ import { TopComponent } from './top/top.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogComponent } from './comp/dialog/dialog.component';
 import { MatDialogRef } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -84,14 +85,13 @@ import { MatDialogRef } from '@angular/material';
   ],
   providers: [PostService, MyFollowerService, { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
   entryComponents: [
-    //If you want to use component in the dialog, need to be written the name of the dialog here.
+    // If you want to use component in the dialog, need to be written the name of the dialog here.
     FavoriteComponent,
     DialogComponent,
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  mode = { value: 'side' };
 
 }
 
