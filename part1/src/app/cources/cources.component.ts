@@ -18,10 +18,9 @@ export class CourcesComponent implements OnInit {
   constructor(private fireStore: AngularFirestore, fireAuth: FirebaseApp) {
     this.items = fireStore.collection('/items').valueChanges();
 
-    this.items = fireStore.collection('/items', ref => {
-      ref.where('name', '==', 'nagase')
-    })
-
+    // this.items = fireStore.collection("/items", ref => {
+    //   ref.where('name', '==', 'nagase')
+    // })
 
 
   }
