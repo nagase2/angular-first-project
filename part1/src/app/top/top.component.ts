@@ -8,7 +8,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class TopComponent {
 
-  mode = { value: 'side' };
+  mode = {
+    value: 'side'
+    //or over
+  };
   options: FormGroup;
 
   constructor(fb: FormBuilder) {

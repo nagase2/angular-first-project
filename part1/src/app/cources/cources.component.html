@@ -1,3 +1,15 @@
 <p>
   cources works!
 </p>
+
+<mat-form-field class="example-full-width">
+  <input ngModel #itemValue="ngModel" name="itemValue" matInput placeholder="itemValue">
+  <mat-hint>please input value here!</mat-hint>
+</mat-form-field>
+&nbsp;
+<button (click)="addItemValue(itemValue)" color="accent" mat-raised-button>open favorite</button>
+<ul>
+  <li *ngFor="let item of items | async">
+    {{item|json}}
+  </li>
+</ul>

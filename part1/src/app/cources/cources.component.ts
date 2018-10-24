@@ -2,29 +2,43 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { FirebaseAuth, FirebaseApp } from 'angularfire2';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cources',
-  template: `<h3>courses</h3>
-  <ul>
-  <li *ngFor="let item of items | async">
-      
-      {{item.value}}
-  </li>
-</ul>
-  `,
+  templateUrl: 'cources.component.html',
   styleUrls: ['./cources.component.css']
 })
 export class CourcesComponent implements OnInit {
   isActive = true;
   public items: Observable<any[]>;
 
-  constructor(db: AngularFirestore) {
-      this.items = db.collection('/items').valueChanges();
+
+  constructor(private fireStore: AngularFirestore, fireAuth: FirebaseApp) {
+    this.items = fireStore.collection('/items').valueChanges();
+
+    this.items = fireStore.collection('/items', ref => {
+      ref.where('name', '==', 'nagase')
+    })
+
+
+
+  }
+  addItemValue(itemValue: FormControl) {
+    console.log(itemValue.value)
+    this.fireStore.collection('/items').add({ 'value': itemValue.value }).then((docRef) => {
+      console.log(docRef);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+  findOneItem() {
+
   }
 
   onSave($event) {
-
     console.log($event);
     console.log('x座標:' + $event.clientX);
   }
@@ -32,7 +46,7 @@ export class CourcesComponent implements OnInit {
     console.log('enter was pressed.');
   }
   ngOnInit() {
-    
+
   }
 
 }
