@@ -1,26 +1,27 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-cources',
   template: `<h3>courses</h3>
   <ul>
-    <li *ngFor="let item of courses$">
-       {{ item.value}}
-    </li>
-  </ul>
+  <li *ngFor="let item of items | async">
+      
+      {{item.value}}
+  </li>
+</ul>
   `,
   styleUrls: ['./cources.component.css']
 })
 export class CourcesComponent implements OnInit {
   isActive = true;
-  courses$: AngularFireList<any[]>;
+  public items: Observable<any[]>;
 
-
-  constructor(private db: AngularFireDatabase) {
+  constructor(db: AngularFirestore) {
+      this.items = db.collection('/items').valueChanges();
   }
-
 
   onSave($event) {
 
@@ -31,9 +32,7 @@ export class CourcesComponent implements OnInit {
     console.log('enter was pressed.');
   }
   ngOnInit() {
-    this.courses$ = this.db.list('/courses')
-
-    console.log(this.courses$)
+    
   }
 
 }

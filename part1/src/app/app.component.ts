@@ -1,4 +1,4 @@
-import { AngularFireDatabase } from 'angularfire2/database';
+
 import { Component } from '@angular/core';
 import { ChangedArgsValues, FavoriteComponent } from './comp/favorite/favorite.component';
 import { MatDialog } from '@angular/material';
@@ -15,9 +15,7 @@ export class AppComponent {
   title = 'Inverness';
   courses: Observable<any[]>
 
-  constructor(router: Router, db: AngularFireDatabase) {
-
-    console.log(db.list('/courses'))
+  constructor(router: Router) {
 
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {

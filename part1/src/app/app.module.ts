@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angul
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 // import {
 //   MatCheckboxModule, MatRadioModule, MatSelectModule,
@@ -70,6 +71,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
     MaterialModules,
     RouterModule.forRoot([
