@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { environment } from './../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -9,6 +10,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angul
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 // import {
@@ -26,7 +28,7 @@ import { CourcesComponent } from './cources/cources.component';
 import { FavoriteComponent } from './comp/favorite/favorite.component';
 import { TitleCaseComponent } from './comp/title-case/title-case.component';
 import { TitleCasePipe } from './comp/title-case/title-case.pipe';
-import { PanelComponent } from './panel/panel.component';
+import { PanelComponent } from './comp/panel/panel.component';
 import { LikeComponent } from './comp/like/like.component';
 import { SwitchComponent } from './switch/switch.component';
 import { ForComponent } from './comp/for/for.component';
@@ -43,6 +45,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogComponent } from './comp/dialog/dialog.component';
 import { MatDialogRef } from '@angular/material';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -65,7 +68,8 @@ import { OverlayContainer } from '@angular/cdk/overlay';
     MyProfileComponent,
     MdFormsComponent,
     TopComponent,
-    DialogComponent
+    DialogComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -73,6 +77,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+
     MaterialModules,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
@@ -84,7 +89,9 @@ import { OverlayContainer } from '@angular/cdk/overlay';
       { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [PostService, MyFollowerService, { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
+  providers: [PostService, MyFollowerService,
+    AngularFireAuth,    AngularFirestore,
+    { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
   entryComponents: [
     // If you want to use component in the dialog, need to be written the name of the dialog here.
     FavoriteComponent,
