@@ -3,3 +3,7 @@ mat-toolbar {
     font-size: 25px;
     font-weight: bold;
 }
+
+mat-sidenav {
+    width: 400px;
+  }

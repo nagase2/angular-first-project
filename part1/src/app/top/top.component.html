@@ -11,7 +11,36 @@
 
   <mat-sidenav #sidenav [mode]=mode.value [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
     [fixedBottomGap]="options.value.bottom">
-    {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+    {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav...............
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Self aware panel11
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Self aware panel22
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+     
+        
+      </mat-expansion-panel>
+    </mat-accordion>
   </mat-sidenav>
 
   <mat-sidenav-content [formGroup]="options">
@@ -22,7 +51,13 @@
       <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
       <mat-checkbox formControlName="over">Over</mat-checkbox>
     </p>
-
+    <nav class="ng-tns-c14-275 ng-star-inserted">
+      sddrerer
+      
+      sdfdsfd
+    </nav>
+    jjjjjjjjjjjjjjjjj
+   
     <app-auth></app-auth>
 
     <nav color="primary" class="navbar navbar-expand navbar-light bg-light">
