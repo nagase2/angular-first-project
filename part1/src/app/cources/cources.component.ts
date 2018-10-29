@@ -19,50 +19,62 @@ export class CourcesComponent implements OnInit {
   isActive = true;
   //public items: Observable<any[]>;
 
-  itemRef: AngularFirestoreCollection<Item>
-  public items$: Observable<Item[]>
+  itemCollection: AngularFirestoreCollection<Item>;
+
+  // public items: Observable<Item[]>
+  public items: Observable<any[]>;
   startDate$: BehaviorSubject<Date>
   searchName$: BehaviorSubject<String>
 
-  constructor(private fireStore: AngularFirestore, fireAuth: FirebaseApp) {
+  constructor(private afs: AngularFirestore, fireAuth: FirebaseApp) {
+    this.itemCollection = this.afs.collection('items');
+
+    this.items = afs.collection('items', ref => ref.where('value', '==', 'aaa')).valueChanges();
+
 
     // this.startDate$ = new BehaviorSubject(new Date('2018-10-27'))
     // this.searchName$ = new BehaviorSubject("aaa")
 
     // this.items$ = this.searchName$.pipe(
     //   switchMap(date => this.fireStore
-    //     .collection<Item>(`item/`, ref => {
+    //     .collection<Item>(`Item`, ref => {
     //       ref.where('startDate', '==', date))
     //     .valueChanges()
     //   )
     // )
 
 
-    // var itemRef = fireStore.collection('/items')
+    //var itemRef = fireStore.collection('Items')
 
     // var query = itemRef.
 
     // fireStore.collection('items', (ref) => {
     //   ref.where('name', '==', 'nagase')
     // })
-//     var citiesRef = db.collection('cities');
-// var query = citiesRef.where('capital', '==', true).get()
-//   .then(snapshot => {
-//     snapshot.forEach(doc => {
-//       console.log(doc.id, '=>', doc.data());
-//     });
-//   })
-//   .catch(err => {
-//     console.log('Error getting documents', err);
-//   });
+    //     var citiesRef = db.collection('cities');
+    // var query = citiesRef.where('capital', '==', true).get()
+    //   .then(snapshot => {
+    //     snapshot.forEach(doc => {
+    //       console.log(doc.id, '=>', doc.data());
+    //     });
+    //   })
+    //   .catch(err => {
+    //     console.log('Error getting documents', err);
+    //   });
 
     //afs.collection('items', ref => ref.where('size', '==', 'large'))
 
   }
 
+  getByItemName(itemName) {
+    this.itemCollection = this.afs.collection('items', ref => ref.where('value', '==', itemName));
+    console.log("★")
+    console.log(this.itemCollection)
+  }
+
   addItemValue(itemValue) {
     console.log(itemValue.value)
-    this.fireStore.collection('items').add({ 'value': itemValue.value }).then((docRef) => {
+    this.afs.collection('items').add({ 'value': itemValue.value }).then((docRef) => {
       console.log("" + docRef);
 
     }).catch((error) => {
@@ -86,13 +98,14 @@ export class CourcesComponent implements OnInit {
   }
 }
 
-<<<<<<< HEAD
 
-=======
-export interface Item{
-  id:string
-  name:string
-  value:string
-  age:number
-} 
->>>>>>> 83e7e61a2efb5f6b1c9f38af5bee3225d2fd147d
+
+export interface Item {
+  id: string
+  name: string
+  value: string
+  age: number
+}
+
+// here is sample code
+//https://medium.com/avocoders/getting-started-with-angularfirestore-1a2cef8aa394

@@ -7,9 +7,12 @@
   <mat-hint>please input value here!</mat-hint>
 </mat-form-field>
 &nbsp;
+<button (click)="getByItemName('aaa')" color="warn" mat-raised-button>検索</button>
 <button (click)="addItemValue(itemValue)" color="accent" mat-raised-button>open favorite</button>
 <ul>
-  <li *ngFor="let item of items$ | async">
+  <li *ngFor="let item of items | async">
     {{item|json}}
   </li>
 </ul>
+
+
