@@ -9,7 +9,7 @@
 &nbsp;
 <button (click)="addItemValue(itemValue)" color="accent" mat-raised-button>open favorite</button>
 <ul>
-  <li *ngFor="let item of items | async">
+  <li *ngFor="let item of items$ | async">
     {{item|json}}
   </li>
 </ul>

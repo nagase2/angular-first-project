@@ -4,9 +4,10 @@ import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 //import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { FirebaseAuth, FirebaseApp } from 'angularfire2';
 import { FormControl } from '@angular/forms';
+import { Item } from './Item';
 
 @Component({
   selector: 'app-cources',
@@ -15,11 +16,26 @@ import { FormControl } from '@angular/forms';
 })
 export class CourcesComponent implements OnInit {
   isActive = true;
-  public items: Observable<any[]>;
+  //public items: Observable<any[]>;
 
+  itemRef: AngularFirestoreCollection<Item>
+  public items$: Observable<Item[]>
+  startDate$: BehaviorSubject<Date>
+  searchName$: BehaviorSubject<String>
 
   constructor(private fireStore: AngularFirestore, fireAuth: FirebaseApp) {
-    this.items = fireStore.collection('/items').valueChanges();
+
+    this.startDate$ = new BehaviorSubject(new Date('2018-10-27'))
+    this.searchName$ = new BehaviorSubject("aaa")
+
+    this.items$ = this.searchName$.pipe(
+      switchMap(date => this.fireStore
+        .collection<Item>(`Item`, ref => {
+          ref.where('startDate', '==', date))
+        .valueChanges()
+      )
+    )
+
 
     // this.items = fireStore.collection('items', (ref) => {
     //   ref.where('name', '==', 'nagase')
@@ -55,3 +71,5 @@ export class CourcesComponent implements OnInit {
   }
 
 }
+
+
