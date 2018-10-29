@@ -3,3 +3,28 @@ mat-toolbar {
     font-size: 25px;
     font-weight: bold;
 }
+
+mat-sidenav {
+    width: 400px;
+  }
+
+
+  .mat-expansion-panel-header:hover{
+    background-color: red;
+  }
+  .mat-panel-title{
+    background-color : red;
+  }
+
+  a.mat-list-item:hover{
+    background-color: rgba(194, 192, 194, 0.26);
+  }
+
+
+  
+.mat-is-mobile .mat-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  

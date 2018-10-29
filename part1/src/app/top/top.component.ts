@@ -12,6 +12,7 @@ export class TopComponent {
     value: 'side'
     //or over
   };
+  panelOpenState= true;
   options: FormGroup;
 
   constructor(fb: FormBuilder) {

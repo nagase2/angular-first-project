@@ -7,11 +7,85 @@
 
 
 
-<mat-sidenav-container class="example-container">
-
+<mat-sidenav-container >
   <mat-sidenav #sidenav [mode]=mode.value [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
     [fixedBottomGap]="options.value.bottom">
-    {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Experiments
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+              <mat-nav-list>
+                <a mat-list-item routerLink="." >ログイン
+                </a>
+                <a mat-list-item routerLink="followers" >Stack overflow API</a>
+                <a mat-list-item routerLink="md-forms" >forms</a>
+              </mat-nav-list>
+        </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Firebase
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item routerLink="courses" >Firebase登録
+              </a>
+              <a mat-list-item routerLink="courses" >Firebase検索</a>
+            </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            グリッド関連
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item routerLink="." >Grid CRUD</a>
+              <a mat-list-item routerLink="." >Grid検索</a>
+            </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Admin area
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item routerLink="." >システム設定変更</a>
+              <a mat-list-item routerLink="." >ユーザ情報編集</a>
+            </mat-nav-list>
+      </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am 
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+    
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>   
   </mat-sidenav>
 
   <mat-sidenav-content [formGroup]="options">
@@ -22,7 +96,15 @@
       <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
       <mat-checkbox formControlName="over">Over</mat-checkbox>
     </p>
-
+    <nav class="ng-tns-c14-275 ng-star-inserted">
+      sddrerer
+      
+      sdfdsfd
+    </nav>
+    <mat-divider></mat-divider>
+    jjjjjjjjjjjjjjjjj
+    <mat-divider></mat-divider>
+   
     <app-auth></app-auth>
 
     <nav color="primary" class="navbar navbar-expand navbar-light bg-light">
