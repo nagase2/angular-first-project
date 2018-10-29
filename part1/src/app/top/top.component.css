@@ -8,9 +8,12 @@ mat-sidenav {
     width: 400px;
   }
 
-  
+
   .mat-expansion-panel-header:hover{
     background-color: red;
+  }
+  .mat-panel-title{
+    background-color : red;
   }
 
   a.mat-list-item:hover{

@@ -11,7 +11,22 @@
 
   <mat-sidenav #sidenav [mode]=mode.value [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
     [fixedBottomGap]="options.value.bottom">
-  
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Experiments
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+              <mat-nav-list>
+                <a mat-list-item routerLink="." >ログイン
+                </a>
+                <a mat-list-item routerLink="followers" >Stack overflow API</a>
+                <a mat-list-item routerLink="md-forms" >forms</a>
+              </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
     <mat-accordion>
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
@@ -21,9 +36,9 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
             <mat-nav-list>
-              <a mat-list-item routerLink="." >Firebase登録
+              <a mat-list-item routerLink="courses" >Firebase登録
               </a>
-              <a mat-list-item routerLink="." >Firebase検索</a>
+              <a mat-list-item routerLink="courses" >Firebase検索</a>
             </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
