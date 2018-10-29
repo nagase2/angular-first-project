@@ -6,9 +6,14 @@
   <input ngModel #itemValue="ngModel" name="itemValue" matInput placeholder="itemValue">
   <mat-hint>please input value here!</mat-hint>
 </mat-form-field>
+<button (click)="addItemValue(itemValue)" color="accent" mat-raised-button>追加</button>
+
 &nbsp;
+<mat-form-field class="example-full-width">
+    <input ngModel #itemValue="ngModel" name="itemValue" matInput placeholder="itemValue">
+    <mat-hint>please input serarch condition here!</mat-hint>
+  </mat-form-field>
 <button (click)="getByItemName('aaa')" color="warn" mat-raised-button>検索</button>
-<button (click)="addItemValue(itemValue)" color="accent" mat-raised-button>open favorite</button>
 <ul>
   <li *ngFor="let item of items | async">
     {{item|json}}
