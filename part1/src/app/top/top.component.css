@@ -8,6 +8,14 @@ mat-sidenav {
     width: 400px;
   }
 
+  .mat-expansion-panel-header:hover{
+    background-color: red;
+  }
+
+  a.mat-list-item:hover{
+    background-color: rgba(194, 192, 194, 0.26);
+  }
+
 
   
 .mat-is-mobile .mat-sidenav-container {

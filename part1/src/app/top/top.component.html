@@ -11,19 +11,20 @@
 
   <mat-sidenav #sidenav [mode]=mode.value [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
     [fixedBottomGap]="options.value.bottom">
-    {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav...............
+  
     <mat-accordion>
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Self aware panel11
+            Firebase
           </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+            <mat-nav-list>
+              <a mat-list-item routerLink="." >Firebase登録
+              </a>
+              <a mat-list-item routerLink="." >Firebase検索</a>
+            </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
     <mat-accordion>
@@ -31,26 +32,29 @@
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Self aware panel22
+            グリッド関連
           </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
         </mat-expansion-panel-header>
-     
-        
+            <mat-nav-list>
+              <a mat-list-item routerLink="." >Grid CRUD</a>
+              <a mat-list-item routerLink="." >Grid検索</a>
+            </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
-    <mat-nav-list>
-      <a mat-list-item routerLink="." >eeeeeeee</a>
-      <a mat-list-item routerLink="." >eeeeeeee</a>
-      <a mat-list-item routerLink="." >eeeeeeee</a>
-      <a mat-list-item routerLink="." >eeeeeeee</a>
-      <a mat-list-item routerLink="." >eeeeeeee</a>
-    </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="." >xxxxxxxx</a>
-    </mat-nav-list>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Admin area
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item routerLink="." >システム設定変更</a>
+              <a mat-list-item routerLink="." >ユーザ情報編集</a>
+            </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>   
   </mat-sidenav>
 
   <mat-sidenav-content [formGroup]="options">
