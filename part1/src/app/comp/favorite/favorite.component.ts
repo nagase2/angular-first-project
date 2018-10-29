@@ -15,7 +15,7 @@ export class FavoriteComponent implements OnInit {
   @Output('change1') change2 = new EventEmitter();
   
   constructor(overlayContainer: OverlayContainer) {
-    overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
+   // overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
   }
 
   ngOnInit() {
