@@ -19,10 +19,12 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
               <mat-nav-list>
-                <a mat-list-item routerLink="." >ログイン
+                <a mat-list-item routerLinkActive="active current" routerLink="auth" >ログイン
                 </a>
                 <a mat-list-item routerLink="followers" >Stack overflow API</a>
                 <a mat-list-item routerLink="md-forms" >forms</a>
+                <a mat-list-item routerLink="responsive" >responsive</a>
+                <a mat-list-item routerLink="bootstrap" >bootstrap</a>
               </mat-nav-list>
         </mat-expansion-panel>
       <mat-expansion-panel (opened)="panelOpenState = true"
@@ -92,50 +94,8 @@
     <p><button mat-button (click)="sidenav.toggle()">
         <mat-icon>check</mat-icon>
       </button></p>
-    <p>
-      <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
-      <mat-checkbox formControlName="over">Over</mat-checkbox>
-    </p>
-    <nav class="ng-tns-c14-275 ng-star-inserted">
-      sddrerer
-      
-      sdfdsfd
-    </nav>
-    <mat-divider></mat-divider>
-    jjjjjjjjjjjjjjjjj
-    <mat-divider></mat-divider>
-   
-    <app-auth></app-auth>
-
-    <nav color="primary" class="navbar navbar-expand navbar-light bg-light">
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item " routerLinkActive="active current">
-            <a class="nav-link" routerLink="md-forms">Md forms<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item " routerLinkActive="active current">
-            <a class="nav-link" routerLink="courses">courses<br>(Firebase)<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item " routerLinkActive="active current">
-            <a class="nav-link" routerLink="profile">profile<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="switch">switch<span class="sr-only">(current)</span></a>
-
-          </li>
-          <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="followers" [queryParams]="{ page: 1, order: 'asc'}">follower</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+ 
+ 
     <router-outlet>
     </router-outlet>
   </mat-sidenav-content>

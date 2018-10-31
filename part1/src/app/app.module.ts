@@ -46,6 +46,9 @@ import { DialogComponent } from './comp/dialog/dialog.component';
 import { MatDialogRef } from '@angular/material';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AuthComponent } from './auth/auth.component';
+import { ResponsiveComponent } from './experiment/responsive/responsive.component';
+import { NavComponent } from './experiment/nav/nav.component';
+import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import { AuthComponent } from './auth/auth.component';
     MdFormsComponent,
     TopComponent,
     DialogComponent,
-    AuthComponent
+    AuthComponent,
+    ResponsiveComponent,
+    NavComponent,
+    BootstrapComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -77,15 +83,17 @@ import { AuthComponent } from './auth/auth.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-
     MaterialModules,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
+      { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
+      { path: 'bootstrap', component: BootstrapComponent },
       { path: 'switch', component: SwitchParentsComponent },
       { path: 'followers/:id/:username', component: MyProfileComponent },
       { path: 'followers', component: MyFollowersComponent },
       { path: 'courses', component: CourcesComponent },
+      { path: 'responsive', component: ResponsiveComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
