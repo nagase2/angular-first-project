@@ -75,7 +75,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["./node_module/jquery"],
             "assets": [
               "src/favicon.ico",
               "src/assets"
