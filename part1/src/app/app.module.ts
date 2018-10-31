@@ -43,12 +43,14 @@ import { MdFormsComponent } from './md-forms/md-forms.component';
 import { TopComponent } from './top/top.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogComponent } from './comp/dialog/dialog.component';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AuthComponent } from './auth/auth.component';
 import { ResponsiveComponent } from './experiment/responsive/responsive.component';
 import { NavComponent } from './experiment/nav/nav.component';
 import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -75,7 +77,8 @@ import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
     AuthComponent,
     ResponsiveComponent,
     NavComponent,
-    BootstrapComponent
+    BootstrapComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -95,7 +98,13 @@ import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
       { path: 'courses', component: CourcesComponent },
       { path: 'responsive', component: ResponsiveComponent },
       { path: '**', component: NotFoundComponent }
-    ])
+    ]),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [PostService, MyFollowerService,
     AngularFireAuth,    AngularFirestore,
