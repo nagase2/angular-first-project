@@ -1,22 +1,59 @@
-<mat-toolbar color="primary">Menu2</mat-toolbar>
+<mat-toolbar color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  Inverness
+</mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" autosize>
   <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'side' : 'side'"
-    [opened]="!(isHandset$ | async)" [fixedInViewport]="false" [ngClass]="{'clear': (isHandset$ | async) }" 
-    >
+    [opened]="true" [fixedInViewport]="false">
 
-    <mat-nav-list *ngIf="!(isHandset$ | async)" >
-      <a mat-list-item href="#">Link 1</a>
-      <input type="text" [(ngModel)]="inputValue" />
-      <a mat-list-item href="#">Link PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</a>
-      <a mat-list-item href="#">Link 3</a>
+    <mat-nav-list *ngIf="!(isHandset$ | async)">
+      <a mat-list-item href="#" atTooltip="show item list" matTooltipPosition="right">
+        <mat-icon>list_alt</mat-icon>
+        <div>&nbsp;Item List</div>
+      </a>
+      <a mat-list-item href="#" atTooltip="search items form list" matTooltipPosition="right">
+        <mat-icon>search</mat-icon>
+        <div>&nbsp;Search</div>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>face</mat-icon>
+        <div title="Disabled tooltip">&nbsp;My Contents</div>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>loyalty</mat-icon>
+        &nbsp;Favorite
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>settings</mat-icon>
+        &nbsp;Setting
+      </a>
     </mat-nav-list>
-  
-    <mat-nav-list *ngIf="(isHandset$ | async)" >
-     
-      <a mat-list-item href="#">xxxxx 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+
+    <mat-nav-list *ngIf="(isHandset$ | async)">
+      <a mat-list-item href="#" matTooltip="xxxxS" matTooltipPosition="right">
+        <mat-icon>list_alt</mat-icon>
+
+
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>search</mat-icon>
+
+
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>face</mat-icon>
+
+
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>loyalty</mat-icon>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>settings</mat-icon>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -25,9 +62,7 @@
     これはメッセージです。
     {{this.inputValue}}
 
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
+
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
