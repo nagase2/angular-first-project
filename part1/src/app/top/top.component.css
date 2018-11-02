@@ -4,9 +4,8 @@ mat-toolbar {
     font-weight: bold;
 }
 
-mat-sidenav {
-    width: 400px;
-  }
+
+
 
 
   .mat-expansion-panel-header:hover{
@@ -20,6 +19,9 @@ mat-sidenav {
     background-color: rgba(194, 192, 194, 0.26);
   }
 
+  .sidenav-container {
+    height: 100%;
+}
 
   
 .mat-is-mobile .mat-sidenav-container {
@@ -28,3 +30,11 @@ mat-sidenav {
     flex: 1 0 auto;
   }
   
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 50px;
+    padding-left: 8px;
+    font-size: 25px;
+}

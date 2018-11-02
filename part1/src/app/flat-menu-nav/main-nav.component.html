@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  Inverness
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" autosize>
+  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'side' : 'side'"
+    [opened]="true" [fixedInViewport]="false">
+
+    <mat-nav-list>
+      <a mat-list-item href="#" matTooltip="show item list" matTooltipPosition="right">
+        <mat-icon>list_alt</mat-icon>
+        <div *ngIf="!(isHandset$ | async)">&nbsp;Item List</div>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matTooltip="search items form list" matTooltipPosition="right">search</mat-icon>
+        <div *ngIf="!(isHandset$ | async)">&nbsp;Search</div>
+      </a>
+      <a mat-list-item href="#" matTooltip="search items form list" matTooltipPosition="right">
+        <mat-icon>face</mat-icon>
+        <div *ngIf="!(isHandset$ | async)">&nbsp;My Contents</div>
+      </a>
+      <a mat-list-item href="#" matTooltip="search items form list" matTooltipPosition="right">
+        <mat-icon>loyalty</mat-icon>
+        <div *ngIf="!(isHandset$ | async)">&nbsp;Favorite</div>
+      </a>
+      <a mat-list-item href="#" matTooltip="search items form list" matTooltipPosition="right">
+        <mat-icon>settings</mat-icon>
+        <div *ngIf="!(isHandset$ | async)">&nbsp;Setting</div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    こんにちは。dsfdsfsdfsdfsdfdsf
+    これはメッセージです。
+    {{this.inputValue}}
+
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

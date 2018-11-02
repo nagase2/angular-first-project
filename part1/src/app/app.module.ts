@@ -49,7 +49,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ResponsiveComponent } from './experiment/responsive/responsive.component';
 import { NavComponent } from './experiment/nav/nav.component';
 import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainNavComponent } from './flat-menu-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 
@@ -107,7 +107,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatListModule
   ],
   providers: [PostService, MyFollowerService,
-    AngularFireAuth,    AngularFirestore,
+    AngularFireAuth, AngularFirestore,
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
   entryComponents: [
     // If you want to use component in the dialog, need to be written the name of the dialog here.
