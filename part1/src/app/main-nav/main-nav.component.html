@@ -1,32 +1,33 @@
 <mat-toolbar color="primary">Menu2</mat-toolbar>
 
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" 
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'side' : 'side'"
-      [opened]="!(isHandset$ | async)"
-      [fixedInViewport]="false"
-      >
-   
-    <mat-nav-list>
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" autosize>
+  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'side' : 'side'"
+    [opened]="!(isHandset$ | async)" [fixedInViewport]="false" [ngClass]="{'clear': (isHandset$ | async) }" 
+    >
+
+    <mat-nav-list *ngIf="!(isHandset$ | async)" >
       <a mat-list-item href="#">Link 1</a>
+      <input type="text" [(ngModel)]="inputValue" />
+      <a mat-list-item href="#">Link PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  
+    <mat-nav-list *ngIf="(isHandset$ | async)" >
+     
+      <a mat-list-item href="#">xxxxx 1</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
-  
-  <mat-sidenav-content>
-    sdfdsfdsfsdfsdfsdfdsf
-    dsfdsfdsfdsfdsfd
 
-    <button
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    (click)="drawer.toggle()"
-    *ngIf="isHandset$ | async">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
+  <mat-sidenav-content>
+    こんにちは。dsfdsfsdfsdfsdfdsf
+    これはメッセージです。
+    {{this.inputValue}}
+
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

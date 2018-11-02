@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./main-nav.component.css'],
 })
 export class MainNavComponent {
+  inputValue=""
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
