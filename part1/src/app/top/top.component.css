@@ -53,7 +53,7 @@ mat-panel-title {
 }
 
 ::ng-deep .mat-list-item-content {
-  padding-left: 40px !important;
+  padding-left: 30px !important;
 }
 
 ::ng-deep .current{

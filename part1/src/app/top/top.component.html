@@ -1,113 +1,132 @@
 <mat-toolbar color="primary">
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    Inverness
-  </mat-toolbar>
-  
-  <mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" autosize>
-    <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'side' : 'side'"
-      [opened]="true" [fixedInViewport]="false">
-  
-  
-   <mat-accordion>
-          <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                
-                Experiments
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-                <mat-nav-list>
-                  <a mat-list-item routerLinkActive="active current" routerLink="auth" >
-                     <mat-icon>settings</mat-icon>
-                     &nbsp;ログイン
-                  </a>
-                  <a mat-list-item routerLink="followers" > 
-                    <mat-icon>settings</mat-icon>
-                  Stack overflow API</a>
-                  <a mat-list-item routerLink="md-forms" >forms</a>
-                  <a mat-list-item routerLink="responsive" >
-                    <mat-icon>settings</mat-icon>
-                    responsive</a>
-                  <a mat-list-item routerLink="bootstrap" ><mat-icon>settings</mat-icon>
-                  bootstrap</a>
-                </mat-nav-list>
-          </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Firebase
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-              <mat-nav-list>
-                <a mat-list-item routerLink="courses" >Firebase登録
-                </a>
-                <a mat-list-item routerLink="courses" >Firebase検索</a>
-              </mat-nav-list>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              グリッド関連
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-              <mat-nav-list>
-                <a mat-list-item routerLink="." >Grid CRUD</a>
-                <a mat-list-item routerLink="." >Grid検索</a>
-              </mat-nav-list>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Admin area
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-              <mat-nav-list>
-                <a mat-list-item routerLink="." >システム設定変更</a>
-                <a mat-list-item routerLink="." >ユーザ情報編集</a>
-              </mat-nav-list>
-        </mat-expansion-panel>
-  
-  
-      <mat-expansion-panel>
-      <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am 
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-      
-      <mat-expansion-panel>
-      <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-  
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-    </mat-accordion>   
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      こんにちは。dsfdsfsdfsdfsdfdsf
-      これはメッセージです。
-     
-      
-  
-  
-      <!-- Add Content Here -->
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  Inverness
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="(isHandset$ | async)" autosize>
+  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)" [fixedInViewport]="false">
 
 
-  
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Experiments
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active current" routerLink="followers" active>
+            <mat-icon>settings</mat-icon>
+            &nbsp;Stack overflow API
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="md-forms">
+            <mat-icon>settings</mat-icon>
+            &nbsp;forms
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="responsive">
+            <mat-icon>settings</mat-icon>
+            &nbsp;responsive
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="bootstrap">
+            <mat-icon>settings</mat-icon>
+            &nbsp;bootstrap
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="switch">
+            <mat-icon>face</mat-icon>
+            &nbsp;switch
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            認証認可
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active current" routerLink="auth">
+            <mat-icon>settings</mat-icon>
+            &nbsp;ログイン
+          </a>
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;function 1
+          </a>
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;function 2
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Firebase
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active current" routerLink="auth">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Firebase ログイン
+          </a>
+          <a mat-list-item routerLink="courses">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Firebase登録
+          </a>
+          <a mat-list-item routerLink="courses">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Firebase検索
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            グリッド関連
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Grid CRUD
+          </a>
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Grid検索
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Admin area
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;システム設定変更
+          </a>
+          <a mat-list-item routerLink=".">
+            <mat-icon>settings</mat-icon>
+            &nbsp;ユーザ情報編集
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="main-content">
+      <router-outlet>
+      </router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

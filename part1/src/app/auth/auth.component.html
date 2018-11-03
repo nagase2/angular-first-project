@@ -1,3 +1,15 @@
-<p>
-  auth works!
-</p>
+<div *ngIf="afAuth.user | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  {{ user.email }}
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()">Login with Google</button>
+</ng-template>
+
+<button (click)="createUser(email, password)">createUser</button>
+
+<input type="text" name="email" #email />
+<input type="password" name="password" #password />
+<button (click)="loginWithEmail(email,password)">loginWithEmail</button>
