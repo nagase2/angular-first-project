@@ -55,3 +55,9 @@ mat-panel-title {
 ::ng-deep .mat-list-item-content {
   padding-left: 40px !important;
 }
+
+::ng-deep .current{
+  color:red;
+  font-weight: bold;
+  background: rgb(235, 235, 235);
+}
