@@ -38,3 +38,8 @@ mat-toolbar {
     padding-left: 8px;
     font-size: 25px;
 }
+
+.mat-expansion-panel-body
+{padding:0px !important;
+
+}

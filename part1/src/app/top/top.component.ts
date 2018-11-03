@@ -1,6 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
@@ -12,10 +14,13 @@ export class TopComponent {
     value: 'side'
     //or over
   };
-  panelOpenState= true;
+  panelOpenState = true;
   options: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(
+    fb: FormBuilder
+    , private breakpointObserver: BreakpointObserver
+  ) {
     this.options = fb.group({
       bottom: 0,
       fixed: false,
@@ -23,6 +28,13 @@ export class TopComponent {
       over: false
     });
   }
+
+
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
 
 
 
