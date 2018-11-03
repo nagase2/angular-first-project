@@ -22,28 +22,32 @@
             <mat-icon>settings</mat-icon>
             &nbsp;ログイン
           </a>
-          <a mat-list-item routerLink="followers">
+          <a mat-list-item routerLinkActive="active current" routerLink="followers" active>
             <mat-icon>settings</mat-icon>
             &nbsp;Stack overflow API
           </a>
-          <a mat-list-item routerLink="md-forms">
+          <a mat-list-item routerLinkActive="active current" routerLink="md-forms">
             <mat-icon>settings</mat-icon>
             &nbsp;forms
           </a>
-          <a mat-list-item routerLink="responsive">
+          <a mat-list-item routerLinkActive="active current" routerLink="responsive">
             <mat-icon>settings</mat-icon>
             &nbsp;responsive
           </a>
-          <a mat-list-item routerLink="bootstrap">
+          <a mat-list-item routerLinkActive="active current" routerLink="bootstrap">
             <mat-icon>settings</mat-icon>
             &nbsp;bootstrap
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="switch">
+            <mat-icon>face</mat-icon> 
+            &nbsp;switch
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            &nbsp;Firebase
+            Firebase
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list>
