@@ -51,6 +51,7 @@ import { NavComponent } from './experiment/nav/nav.component';
 import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
 import { MainNavComponent } from './flat-menu-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     ResponsiveComponent,
     NavComponent,
     BootstrapComponent,
-    MainNavComponent
+    MainNavComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -88,7 +90,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AngularFireDatabaseModule,
     MaterialModules,
     RouterModule.forRoot([
-      { path: '', component: TopComponent },
+      { path: '', component: WelcomeComponent },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
       { path: 'bootstrap', component: BootstrapComponent },

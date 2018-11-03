@@ -1,45 +1,57 @@
 mat-toolbar {
-    font-family: sans-serif;
-    font-size: 25px;
-    font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-
-
-
-
-  .mat-expansion-panel-header:hover{
-    background-color: red;
-  }
-  .mat-panel-title{
-    background-color : red;
-  }
-
-  a.mat-list-item:hover{
-    background-color: rgba(194, 192, 194, 0.26);
-  }
-
-  .sidenav-container {
-    height: 100%;
+.main-content {
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
-  
+.mat-expansion-panel-header:hover {
+  background-color: red;
+}
+
+.mat-panel-title {
+  background-color: red;
+}
+
+a.mat-list-item:hover {
+  background-color: rgba(194, 192, 194, 0.26);
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
 .mat-is-mobile .mat-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-  
-  .mat-toolbar.mat-primary {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    height: 50px;
-    padding-left: 8px;
-    font-size: 25px;
+  flex: 1 0 auto;
 }
 
-.mat-expansion-panel-body
-{padding:0px !important;
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 50px;
+  padding-left: 8px;
+  font-size: 25px;
+}
 
+mat-panel-title {
+  /*
+  font-size: 20px;
+  font-weight: bold;
+  font-family: '-apple-system,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,"メイリオ",meiryo,sans-serif'
+  */
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px !important;
+}
+
+::ng-deep .mat-list-item-content {
+  padding-left: 40px !important;
 }
