@@ -24,7 +24,7 @@ import {
 } from './material-modules';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
-import { CourcesComponent } from './cources/cources.component';
+import { CourcesComponent } from './comp/cources/cources.component';
 import { FavoriteComponent } from './comp/favorite/favorite.component';
 import { TitleCaseComponent } from './comp/title-case/title-case.component';
 import { TitleCasePipe } from './comp/title-case/title-case.pipe';
@@ -39,7 +39,7 @@ import { MyFollowersComponent } from './comp/my-followers/my-followers.component
 import { MyFollowerService } from './common/my-follower.service';
 import { SwitchParentsComponent } from './switch-parents/switch-parents.component';
 import { MyProfileComponent } from './comp/my-profile/my-profile.component';
-import { MdFormsComponent } from './md-forms/md-forms.component';
+import { MdFormsComponent } from './comp/md-forms/md-forms.component';
 import { TopComponent } from './top/top.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DialogComponent } from './comp/dialog/dialog.component';

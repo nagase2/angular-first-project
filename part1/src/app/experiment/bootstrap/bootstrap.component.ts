@@ -13,3 +13,7 @@ export class BootstrapComponent implements OnInit {
   }
 
 }
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })

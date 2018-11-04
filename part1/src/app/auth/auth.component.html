@@ -1,6 +1,8 @@
 <div *ngIf="afAuth.user | async as user; else showLogin">
-  <h1>Hello {{ user.displayName }}!</h1>
+  <h1>Auth Component {{ user.displayName }}!</h1>
   {{ user.email }}
+  <br><br>
+
   <button (click)="logout()">Logout</button>
 </div>
 <ng-template #showLogin>
@@ -8,8 +10,16 @@
   <button (click)="login()">Login with Google</button>
 </ng-template>
 
-<button (click)="createUser(email, password)">createUser</button>
 
-<input type="text" name="email" #email />
-<input type="password" name="password" #password />
-<button (click)="loginWithEmail(email,password)">loginWithEmail</button>
+<input matInput placeholder="username" type="text" name="email" #email />
+<input matInput placeholder="password" type="password" name="password" #password />
+<br>
+<button (click)="createUser(email, password)" color="primary" mat-raised-button matTooltip="ユーザを作成します。"
+  matTooltipPosition="right">
+  createUser
+</button>
+&nbsp;
+<button (click)="loginWithEmail(email,password)" color="primary" mat-raised-button matTooltip="emailアドレスでログインします。認証情報はFireStoreにあります。"
+  matTooltipPosition="right">
+  loginWithEmail
+</button>&nbsp;

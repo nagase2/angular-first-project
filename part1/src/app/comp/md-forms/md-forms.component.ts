@@ -1,13 +1,13 @@
-import { CountService } from './../common/count.service';
+import { CountService } from './../../common/count.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { FavoriteComponent } from '../comp/favorite/favorite.component';
+import { FavoriteComponent } from './../../comp/favorite/favorite.component';
 import { MatDialog } from '@angular/material';
-import { DialogComponent } from '../comp/dialog/dialog.component';
+import { DialogComponent } from './../../comp/dialog/dialog.component';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -64,7 +64,7 @@ export class MdFormsComponent implements OnInit, OnDestroy {
 
 
   constructor(private dialog: MatDialog, public countService: CountService) {
-   // this.countService = countService;
+    // this.countService = countService;
   }
 
   /**
