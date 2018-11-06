@@ -1,3 +1,5 @@
 part1/.firebase/
 node_modules/
 
+*/dist/
+npm-debug.log
