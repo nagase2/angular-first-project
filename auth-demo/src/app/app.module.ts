@@ -1,4 +1,3 @@
-import { AngularFireModule } from 'angularfire2';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt';
 import { OrderService } from './services/order.service';
@@ -34,7 +33,7 @@ import { environment } from './../environments/environment';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       {

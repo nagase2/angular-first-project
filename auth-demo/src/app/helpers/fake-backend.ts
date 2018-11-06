@@ -52,7 +52,7 @@ export function fakeBackendFactory(
           new ResponseOptions({ status: 200, body: ['a', 'b', 'c'] })
         ));
       }
-    }, 500);
+    }, 200);
   });
 
   return new Http(backend, options);
