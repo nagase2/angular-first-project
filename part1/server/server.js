@@ -7,9 +7,12 @@ const app = express()
 
 app.use('/api', api)
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
+
+app.post('/', function (req, res) {
+    console.log(req.body)
     res.send('Hello from server')
 })
 
