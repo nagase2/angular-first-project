@@ -1,3 +1,10 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-
-
+.flex-container>div {
+    margin: 5px;
+    box-align: center;
+ 
+}

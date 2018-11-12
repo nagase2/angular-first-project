@@ -1,3 +1,4 @@
+import { JwtAuthService } from './../service/jwt-auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +11,19 @@ export class UserRegisterComponent implements OnInit {
 
   registerUserData = {}
   
-  constructor() { }
+  constructor(private _auth: JwtAuthService) { }
 
   ngOnInit() {
+  }
+
+  registerUser() {
+    this._auth.registerUser(this.registerUserData).subscribe(
+      (res) => {
+        console.log(res)
+      }, (req) => {
+        console.log(req)
+      }
+    )
   }
 
 }

@@ -1,3 +1,4 @@
+import { JwtAuthService } from './jwt/service/jwt-auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
@@ -109,7 +110,7 @@ import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
     MatIconModule,
     MatListModule
   ],
-  providers: [PostService, MyFollowerService,
+  providers: [PostService, MyFollowerService, JwtAuthService,
     AngularFireAuth, AngularFirestore,
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
   entryComponents: [
