@@ -1,6 +1,6 @@
 import { AngularFireAuth } from '@angular/fire/auth';
 
-import { environment } from './../environments/environment';
+import { environment } from '../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { PostService } from './common/post.service';
@@ -13,12 +13,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-// import {
-//   MatCheckboxModule, MatRadioModule, MatSelectModule,
-//   MatSidenavModule, MatIconModule, MatToolbarModule,
-//   MatOptionModule,
-//   MatInputModule
-// } from '@angular/material';
 import {
   MaterialModules
 } from './material-modules';
@@ -52,6 +46,8 @@ import { BootstrapComponent } from './experiment/bootstrap/bootstrap.component';
 import { MainNavComponent } from './flat-menu-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { UserRegisterComponent } from './jwt/user-register/user-register.component';
+import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
 
 
 @NgModule({
@@ -80,7 +76,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     NavComponent,
     BootstrapComponent,
     MainNavComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    UserRegisterComponent,
+    JwtLoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -90,7 +88,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AngularFireDatabaseModule,
     MaterialModules,
     RouterModule.forRoot([
+      { path: 'xxx', redirectTo: '/auth', pathMatch: 'full'},
       { path: '', component: WelcomeComponent },
+      { path: 'jwt/login', component: JwtLoginComponent },
+      { path: 'jwt/register', component: UserRegisterComponent },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
       { path: 'bootstrap', component: BootstrapComponent },

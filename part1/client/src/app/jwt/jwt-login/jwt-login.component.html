@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+    jwt login
+  </mat-card-title>
+  <div class = "cardbody">
+    <input matInput placeholder="username" type="text" name="email" #email />
+    <input matInput placeholder="password" type="password" name="password" #password />
+    <br>
+    <button (click)="createUser(email, password)" color="primary" mat-raised-button matTooltip="ユーザを作成します。"
+      matTooltipPosition="right">
+      createUser
+    </button>
+    &nbsp;
+    <button (click)="loginWithEmail(email,password)" color="primary" mat-raised-button matTooltip="emailアドレスでログインします。認証情報はFireStoreにあります。"
+      matTooltipPosition="right">
+      loginWithEmail
+    </button>&nbsp;
+  </div>
+</mat-card>

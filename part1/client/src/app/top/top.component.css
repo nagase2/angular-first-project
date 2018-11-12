@@ -61,3 +61,6 @@ mat-panel-title {
   font-weight: bold;
   background: rgb(235, 235, 235);
 }
+.active{
+  background:  rgb(235, 235, 235);;
+}

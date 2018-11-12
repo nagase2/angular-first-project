@@ -11,13 +11,14 @@
 
 
     <mat-accordion>
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
+      <mat-expansion-panel 
+      expanded= "false" >
+        <mat-expansion-panel-header >
           <mat-panel-title>
-            Experiments
+            Experiments : {{experimentLinkActive.isActive}}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-nav-list>
+        <mat-nav-list routerLinkActive #experimentLinkActive="routerLinkActive" >
           <a mat-list-item routerLinkActive="active current" routerLink="followers" active>
             <mat-icon>settings</mat-icon>
             &nbsp;Stack overflow API
@@ -40,24 +41,22 @@
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel 
+      expanded= "true" 
+      >
         <mat-expansion-panel-header>
           <mat-panel-title>
-            認証認可
+            認証認可(jwt)
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active current" routerLink="auth">
+        <mat-nav-list routerLinkActive #authLinkActive="routerLinkActive">
+          <a mat-list-item routerLinkActive="active current" routerLink="/jwt/login">
             <mat-icon>settings</mat-icon>
             &nbsp;ログイン
           </a>
-          <a mat-list-item routerLink=".">
+          <a mat-list-item routerLink="/jwt/register">
             <mat-icon>settings</mat-icon>
-            &nbsp;function 1
-          </a>
-          <a mat-list-item routerLink=".">
-            <mat-icon>settings</mat-icon>
-            &nbsp;function 2
+            &nbsp;Register
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
