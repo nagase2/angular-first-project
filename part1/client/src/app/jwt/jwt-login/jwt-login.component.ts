@@ -12,4 +12,8 @@ export class JwtLoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  login(email: string, pass: string) {
+
+  }
+
 }

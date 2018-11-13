@@ -1,21 +1,19 @@
 <mat-card>
-    <mat-card-title>
-      jwt login
-    </mat-card-title>
-  
-    <div class="cardbody flex-container">
-      <div>
-        <input [(ngModel)]="registerUserData.email" matInput placeholder="email" type="text" name="email" />
-      </div>
-      <div>
-        <input [(ngModel)]="registerUserData.password" matInput placeholder="password" type="password" name="password" />
-      </div>
-      <div>
-        <button (click)="registerUser()" color="primary" mat-raised-button matTooltip="---"
-          matTooltipPosition="right">
-          Register
-        </button>
-      </div>
-    </div>
-  </mat-card>
+  <mat-card-title>
+    ユーザ登録
+  </mat-card-title>
 
+  <div class="cardbody flex-container">
+    <div>
+      <input [(ngModel)]="email" matInput placeholder="email" type="text"  />
+    </div>
+    <div>
+      <input [(ngModel)]="password" matInput placeholder="password" type="password"  />
+    </div>
+    <div>
+      <button (click)="registerUser()" color="primary" mat-raised-button matTooltip="---" matTooltipPosition="right">
+        Register
+      </button>
+    </div>
+  </div>
+</mat-card>

@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRegisterComponent implements OnInit {
 
+  email: string;
+  password:string
+  registerUserData: UserData;
 
-  registerUserData = {}
-  
   constructor(private _auth: JwtAuthService) { }
 
   ngOnInit() {
@@ -27,3 +28,8 @@ export class UserRegisterComponent implements OnInit {
   }
 
 }
+
+interface UserData {
+  email: string,
+  password: string
+};

@@ -18,5 +18,7 @@ export class JwtAuthService {
   registerUser(user) {
     console.log(user)
     return this.http.post<any>(this._registerUrl, user)
+    //return null;
   }
 }
+

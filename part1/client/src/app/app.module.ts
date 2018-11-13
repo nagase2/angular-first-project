@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -82,7 +83,8 @@ import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
     JwtLoginComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
+    HttpModule, HttpClientModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
