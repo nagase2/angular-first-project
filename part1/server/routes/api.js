@@ -51,18 +51,20 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     let userData = req.body
-    console.log("login page")
+    console.log("login page", userData)
     User.findOne({ email: userData.email }, (error, user) => {
         if (error) {
-            console.log(error)
+            console.log("no user...",error)
         }
         else {
             if (!user) {
                 res.status(401).send('Invalid email')
             } else {
                 if (user.password !== userData.password) {
+                    console.log('invalid password...',user)
                     res.status(401).send('Invalid password')
                 } else {
+                    console.log('auth succeed!!!')
                     res.status(200).send(user)
                 }
             }

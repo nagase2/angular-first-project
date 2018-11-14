@@ -8,7 +8,7 @@ export class JwtAuthService {
 
   //これは本物だが、環境によってつながらないときがあるので、ダミーに切り替えられるようにしておきたい。
   private _registerUrl = "http://localhost:3000/api/register"
-
+  private _loginUrl = "http://localhost:3000/api/login"
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,10 @@ export class JwtAuthService {
     console.log(user)
     return this.http.post<any>(this._registerUrl, user)
     //return null;
+  }
+
+  loginUser(user) {
+    return this.http.post<any>(this._loginUrl, user)
   }
 }
 

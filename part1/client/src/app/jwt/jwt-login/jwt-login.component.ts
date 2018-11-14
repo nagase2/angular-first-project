@@ -1,3 +1,4 @@
+import { JwtAuthService } from './../service/jwt-auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,14 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jwt-login.component.css']
 })
 export class JwtLoginComponent implements OnInit {
-
-  constructor() { }
+  loginUserData: any = {}
+  constructor(private _auth: JwtAuthService) { }
 
   ngOnInit() {
   }
 
-  login(email: string, pass: string) {
-
+  login() {
+    console.log(this.loginUserData)
+    this._auth.loginUser(this.loginUserData)
+      .subscribe(
+      (res) => {
+        console.log(res)
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
   }
 
 }

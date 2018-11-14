@@ -21,7 +21,8 @@ export class UserRegisterComponent implements OnInit {
     this._auth.registerUser(this.registerUserData).subscribe(
       (res) => {
         console.log(res)
-      }, (req) => {
+      },
+      (req) => {
         console.log(req)
       }
     )
