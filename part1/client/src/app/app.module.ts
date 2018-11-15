@@ -50,6 +50,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserRegisterComponent } from './jwt/user-register/user-register.component';
 import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
+import { EventComponent } from './jwt/event/event.component';
+import { SpecialEventsComponent } from './jwt/special-events/special-events.component';
 
 
 @NgModule({
@@ -80,7 +82,9 @@ import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
     MainNavComponent,
     WelcomeComponent,
     UserRegisterComponent,
-    JwtLoginComponent
+    JwtLoginComponent,
+    EventComponent,
+    SpecialEventsComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -95,6 +99,8 @@ import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
       { path: '', component: WelcomeComponent },
       { path: 'jwt/login', component: JwtLoginComponent },
       { path: 'jwt/register', component: UserRegisterComponent },
+      { path: 'jwt/events', component: EventComponent },
+      { path: 'jwt/special-events', component: SpecialEventsComponent },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
       { path: 'bootstrap', component: BootstrapComponent },

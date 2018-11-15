@@ -50,13 +50,21 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list routerLinkActive #authLinkActive="routerLinkActive">
+          <a mat-list-item routerLink="/jwt/register">
+            <mat-icon>settings</mat-icon>
+            &nbsp;Register
+          </a>
           <a mat-list-item routerLinkActive="active current" routerLink="/jwt/login">
             <mat-icon>settings</mat-icon>
             &nbsp;ログイン
           </a>
-          <a mat-list-item routerLink="/jwt/register">
+          <a mat-list-item routerLinkActive="active current" routerLink="/jwt/events">
             <mat-icon>settings</mat-icon>
-            &nbsp;Register
+            &nbsp;Event
+          </a>
+          <a mat-list-item routerLinkActive="active current" routerLink="/jwt/special-events">
+            <mat-icon>face</mat-icon>
+            &nbsp;Special Events
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
