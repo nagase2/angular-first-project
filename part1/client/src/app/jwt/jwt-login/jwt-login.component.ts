@@ -17,13 +17,14 @@ export class JwtLoginComponent implements OnInit {
     console.log(this.loginUserData)
     this._auth.loginUser(this.loginUserData)
       .subscribe(
-      (res) => {
-        console.log(res)
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
+        (res) => {
+          console.log(res)
+          localStorage.setItem('token', res.token)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
   }
 
 }

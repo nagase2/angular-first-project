@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class EventService {
   private _eventUrl = "http://localhost:3000/api/events";
   private _specialEventsUrl = "http://localhost:3000/api/special";
+  // こんな感じで、サーバ側で外部サイトから結果を取ってきて表示することも可能。
+  private _jsonplaceholderPostUrl = "https://jsonplaceholder.typicode.com/posts"
 
   constructor(private http: HttpClient) { }
 
@@ -19,4 +21,11 @@ export class EventService {
     return this.http.get<any>(this._specialEventsUrl)
   }
 
+  /**
+   * JsonPlaceholderという外部サイトからサンプルデータを取得する。
+   */
+  getJsonPost() {
+    console.log("get post")
+    return this.http.get<any>(this._jsonplaceholderPostUrl)
+  }
 }

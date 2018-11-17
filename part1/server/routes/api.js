@@ -1,4 +1,5 @@
 const express = require('express')
+const jwt = require('jsonwebtoken')
 const bodyParser = require('body-parser')
 
 const router = express.Router()
@@ -44,8 +45,10 @@ router.post('/register', (req, res) => {
         }
         else {
             console.log("P:" + registeredUser)
-            res.status(200).send(registeredUser)
-        }
+            let payload = { subject: registeredUser.email }
+            let token = jwt.sign(payload, 'secretKey')
+            res.status(200).send({token})
+        } 
     })
 })
 
@@ -65,7 +68,9 @@ router.post('/login', (req, res) => {
                     res.status(401).send('Invalid password')
                 } else {
                     console.log('auth succeed!!!')
-                    res.status(200).send(user)
+                    let payload = { subject: user._id }
+                    let token =jwt.sign(payload,'secretKey')
+                    res.status(200).send({token})
                 }
             }
         }
@@ -73,8 +78,9 @@ router.post('/login', (req, res) => {
 })
 
 router.get('/events', (req, res) => {
-    let events = [{"id":1,"name":"Katine Sherrett","email":"ksherrett0@yolasite.com","date":"11/12/2017"},
-    {"id":2,"name":"Berthe Geater","email":"bgeater1@domainmarket.com","date":"2/7/2018"},
+    let events = [
+    { "id": 1,"name": "Katine Sherrett","description":"this ticket is very popular and already discounted", "email": "ksherrett0@yolasite.com", "date": "11/12/2017" },
+    {"id":2,"name":"Berthe Geater", "description":"this is description", "email":"bgeater1@domainmarket.com","date":"2/7/2018"},
     {"id":3,"name":"Gertie Hember","email":"ghember2@vimeo.com","date":"4/28/2018"},
     {"id":4,"name":"Aeriela Overpool","email":"aoverpool3@sitemeter.com","date":"5/12/2018"},
     {"id":5,"name":"Norbie Satch","email":"nsatch4@about.com","date":"12/31/2017"},
@@ -93,10 +99,11 @@ router.get('/events', (req, res) => {
 
 
 router.get('/special', (req, res) => {
-    let events = [{"id":1,"name":"Katine Sherrett","email":"ksherrett0@yolasite.com","date":"11/12/2017"},
-    {"id":2,"name":"Berthe Geater","email":"bgeater1@domainmarket.com","date":"2/7/2018"},
+    let events = [
+    { "id": 1, "name": "Katine Sherrett", "description":"this is description", "email": "ksherrett0@yolasite.com", "date": "11/12/2017" },
+    {"id":2,"name":"Berthe Geater", "description":"this is description","email":"bgeater1@domainmarket.com","date":"2/7/2018"},
     {"id":3,"name":"Gertie Hember","email":"ghember2@vimeo.com","date":"4/28/2018"},
-    {"id":4,"name":"Aeriela Overpool","email":"aoverpool3@sitemeter.com","date":"5/12/2018"},
+    {"id":4,"name":"Aeriela Overpool", "description":"this is description","email":"aoverpool3@sitemeter.com","date":"5/12/2018"},
     {"id":5,"name":"Norbie Satch","email":"nsatch4@about.com","date":"12/31/2017"},
     {"id":6,"name":"Isiahi Bellow","email":"ibellow5@mail.ru","date":"6/19/2018"},
     {"id":7,"name":"Xavier Gillham","email":"xgillham6@pagesperso-orange.fr","date":"5/28/2018"},
