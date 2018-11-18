@@ -1,5 +1,6 @@
 import { JwtAuthService } from './../service/jwt-auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
@@ -12,7 +13,8 @@ export class UserRegisterComponent implements OnInit {
   password: string
   registerUserData = {};
 
-  constructor(private _auth: JwtAuthService) { }
+  constructor(private _auth: JwtAuthService,
+    private _router: Router) { }
 
   ngOnInit() {
   }
@@ -22,13 +24,13 @@ export class UserRegisterComponent implements OnInit {
       (res) => {
         console.log(res)
         localStorage.setItem('token', res.token)
+        this._router.navigate(['jwt/special'])
       },
       (req) => {
         console.log(req)
       }
     )
   }
-
 }
 
 interface UserData {

@@ -24,5 +24,10 @@ export class JwtAuthService {
   loginUser(user) {
     return this.http.post<any>(this._loginUrl, user)
   }
+
+  loggedIn() {
+    console.log('ログインチェックを行います')
+    return !!localStorage.getItem('token')
+  }
 }
 

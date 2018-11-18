@@ -1,3 +1,4 @@
+import { AuthGuard } from './jwt/auth.guard';
 import { JwtAuthService } from './jwt/service/jwt-auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -95,12 +96,15 @@ import { SpecialEventsComponent } from './jwt/special-events/special-events.comp
     AngularFireDatabaseModule,
     MaterialModules,
     RouterModule.forRoot([
-      { path: 'xxx', redirectTo: '/auth', pathMatch: 'full'},
+      { path: 'xxx', redirectTo: '/auth', pathMatch: 'full' },
       { path: '', component: WelcomeComponent },
       { path: 'jwt/login', component: JwtLoginComponent },
       { path: 'jwt/register', component: UserRegisterComponent },
       { path: 'jwt/events', component: EventComponent },
-      { path: 'jwt/special-events', component: SpecialEventsComponent },
+      {
+        path: 'jwt/special', component: SpecialEventsComponent,
+        canActivate: [AuthGuard]
+      },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
       { path: 'bootstrap', component: BootstrapComponent },
@@ -111,6 +115,7 @@ import { SpecialEventsComponent } from './jwt/special-events/special-events.comp
       { path: 'responsive', component: ResponsiveComponent },
       { path: '**', component: NotFoundComponent }
     ]),
+
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -118,7 +123,7 @@ import { SpecialEventsComponent } from './jwt/special-events/special-events.comp
     MatIconModule,
     MatListModule
   ],
-  providers: [PostService, MyFollowerService, JwtAuthService,
+  providers: [AuthGuard, PostService, MyFollowerService, JwtAuthService,
     AngularFireAuth, AngularFirestore,
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
   entryComponents: [

@@ -1,5 +1,7 @@
+import { RouterModule } from '@angular/router';
 import { JwtAuthService } from './../service/jwt-auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jwt-login',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JwtLoginComponent implements OnInit {
   loginUserData: any = {}
-  constructor(private _auth: JwtAuthService) { }
+  constructor(
+    private _auth: JwtAuthService,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -20,6 +25,8 @@ export class JwtLoginComponent implements OnInit {
         (res) => {
           console.log(res)
           localStorage.setItem('token', res.token)
+          // 指定した先に移動させる
+          this._router.navigate(['jwt/special'])
         },
         (error) => {
           console.log(error)
