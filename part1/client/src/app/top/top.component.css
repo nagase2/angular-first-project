@@ -3,7 +3,14 @@ mat-toolbar {
   font-size: 25px;
   font-weight: bold;
 }
-
+.login{
+  box-align : right;
+  font-size : 12px;
+  text-align: right;
+  float: right;
+  background: red;
+  width : 100px;
+}
 .main-content {
   padding-left: 15px;
   padding-top: 10px;

@@ -1,3 +1,4 @@
+import { JwtAuthService } from './../jwt/service/jwt-auth.service';
 
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -21,7 +22,8 @@ export class TopComponent {
 
   constructor(
     fb: FormBuilder
-    , private breakpointObserver: BreakpointObserver
+    , private breakpointObserver: BreakpointObserver,
+    private _authService: JwtAuthService
   ) {
     this.options = fb.group({
       bottom: 0,

@@ -3,6 +3,10 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   Inverness
+  <span >
+    <div *ngIf="!_authService.loggedIn()" class="login"><a href="">login</a></div> | 
+    <div *ngIf="!!_authService.loggedIn()" class="login"><a href="">logout</a></div>
+  </span>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="(isHandset$ | async)" autosize>
