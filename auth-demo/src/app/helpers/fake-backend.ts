@@ -21,6 +21,7 @@ export function fakeBackendFactory(
     setTimeout(() => {
       //
       // Fake implementation of /api/authenticate
+      // 実際にはここでDBにユーザ情報を検索に行くことになるはず。
       //
       if (connection.request.url.endsWith('/api/authenticate') &&
         connection.request.method === RequestMethod.Post) {

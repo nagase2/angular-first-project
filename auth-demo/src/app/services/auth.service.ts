@@ -34,22 +34,23 @@ export class AuthService {
 
   }
 
+
   isLoggedIn() {
 
-    return tokenNotExpired()
-    // let jwtHelper = new JwtHelper();
-    // let token = localStorage.getItem('token')
+    //return tokenNotExpired()
+    let jwtHelper = new JwtHelper();
+    let token = localStorage.getItem('token')
 
-    // if (!token) {
-    //   return false;
-    // }
+    if (!token) {
+      return false;
+    }
 
-    // let expirationDate = jwtHelper.getTokenExpirationDate(token)
-    // let isExpired = jwtHelper.isTokenExpired(token)
+    let expirationDate = jwtHelper.getTokenExpirationDate(token)
+    let isExpired = jwtHelper.isTokenExpired(token)
     // console.log(expirationDate)
     // console.log(isExpired)
 
-    // return !isExpired;
+    return !isExpired;
   }
 
   get currentUser() {
@@ -57,9 +58,13 @@ export class AuthService {
     if (!token) {
       return null
     }
-
+    
     let jwtHelper = new JwtHelper();
-    return jwtHelper.decodeToken(token)
+    let decodedToken = jwtHelper.decodeToken(token)
+    console.log("★decode token: ",decodedToken);
+    //console.log(decodedToken.roles[1])
+
+    return decodedToken
   }
 }
 

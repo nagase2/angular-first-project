@@ -47,6 +47,7 @@ import { environment } from './../environments/environment';
   ],
   providers: [
     OrderService,
+    //AUTH_PROVIDERS,
     AUTH_PROVIDERS,
     AuthService,
     AuthGuardService,
