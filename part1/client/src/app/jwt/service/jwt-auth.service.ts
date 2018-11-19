@@ -29,5 +29,9 @@ export class JwtAuthService {
     console.log('ログインチェックを行います')
     return !!localStorage.getItem('token')
   }
+
+  getToken() {
+    return localStorage.getItem('token')
+  }
 }
 

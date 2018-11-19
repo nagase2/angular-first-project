@@ -10,7 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -53,7 +53,7 @@ import { UserRegisterComponent } from './jwt/user-register/user-register.compone
 import { JwtLoginComponent } from './jwt/jwt-login/jwt-login.component';
 import { EventComponent } from './jwt/event/event.component';
 import { SpecialEventsComponent } from './jwt/special-events/special-events.component';
-
+import { TokenInterceptorService } from './jwt/service/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -102,8 +102,8 @@ import { SpecialEventsComponent } from './jwt/special-events/special-events.comp
       { path: 'jwt/register', component: UserRegisterComponent },
       { path: 'jwt/events', component: EventComponent },
       {
-        path: 'jwt/special', component: SpecialEventsComponent,
-        canActivate: [AuthGuard]
+        path: 'jwt/special', component: SpecialEventsComponent
+        //,canActivate: [AuthGuard]
       },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
@@ -124,8 +124,17 @@ import { SpecialEventsComponent } from './jwt/special-events/special-events.comp
     MatListModule
   ],
   providers: [AuthGuard, PostService, MyFollowerService, JwtAuthService,
-    AngularFireAuth, AngularFirestore,
-    { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' }],
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    AngularFireAuth,
+    AngularFirestore,
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'ja-JP'
+    }],
   entryComponents: [
     // If you want to use component in the dialog, need to be written the name of the dialog here.
     FavoriteComponent,
