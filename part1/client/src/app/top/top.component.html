@@ -3,10 +3,21 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   Inverness
-  <span >
-    <div *ngIf="!_authService.loggedIn()" class="login"><a href="">login</a></div> | 
-    <div *ngIf="!!_authService.loggedIn()" class="login"><a href="">logout</a></div>
-  </span>
+  <div class="moveright">
+    <a routerLink="jwt/login">
+      <span class="login-align" *ngIf="!_authService.loggedIn()" style="cursor:pointer">
+        <mat-icon aria-label="Side nav toggle icon" class=" icon-small">vpn_key</mat-icon>
+        <span>login</span>
+      </span>
+    </a>
+
+    <a (click)="_authService.logOut()">
+      <span class="login-align" *ngIf="_authService.loggedIn()" style="cursor:pointer">
+        <mat-icon aria-label="Side nav toggle icon" class="icon-small">directions_run</mat-icon>
+        <span>logout</span>
+      </span>
+    </a>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="(isHandset$ | async)" autosize>
@@ -15,14 +26,13 @@
 
 
     <mat-accordion>
-      <mat-expansion-panel 
-      expanded= "false" >
-        <mat-expansion-panel-header >
+      <mat-expansion-panel expanded="false">
+        <mat-expansion-panel-header>
           <mat-panel-title>
             Experiments : {{experimentLinkActive.isActive}}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-nav-list routerLinkActive #experimentLinkActive="routerLinkActive" >
+        <mat-nav-list routerLinkActive #experimentLinkActive="routerLinkActive">
           <a mat-list-item routerLinkActive="active current" routerLink="followers" active>
             <mat-icon>settings</mat-icon>
             &nbsp;Stack overflow API
@@ -45,9 +55,7 @@
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel 
-      expanded= "true" 
-      >
+      <mat-expansion-panel expanded="true">
         <mat-expansion-panel-header>
           <mat-panel-title>
             認証認可(jwt)

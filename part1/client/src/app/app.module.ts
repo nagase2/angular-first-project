@@ -103,7 +103,7 @@ import { TokenInterceptorService } from './jwt/service/token-interceptor.service
       { path: 'jwt/events', component: EventComponent },
       {
         path: 'jwt/special', component: SpecialEventsComponent
-        //,canActivate: [AuthGuard]
+        , canActivate: [AuthGuard]
       },
       { path: 'auth', component: AuthComponent },
       { path: 'md-forms', component: MdFormsComponent },
