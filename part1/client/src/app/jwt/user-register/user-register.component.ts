@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class UserRegisterComponent implements OnInit {
 
   email: string;
-  password: string
-  registerUserData = {};
+  password: string;
+  registerUserData: UserData;
 
   constructor(private _auth: JwtAuthService,
     private _router: Router) { }

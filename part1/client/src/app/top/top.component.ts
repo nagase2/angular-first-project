@@ -23,7 +23,7 @@ export class TopComponent {
   constructor(
     fb: FormBuilder
     , private breakpointObserver: BreakpointObserver,
-    private _authService: JwtAuthService
+    public _authService: JwtAuthService
   ) {
     this.options = fb.group({
       bottom: 0,
