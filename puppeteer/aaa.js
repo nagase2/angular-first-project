@@ -2,13 +2,13 @@
 
 
 function meron() {
-    console.log("meron")
+    console.log("merddddon")
 }
 
 
 function tamanegi() {
     console.log("tamanegi")
-    console.log("suki")
+    console.log("sukddddi")
 }
 
 tamanegi()

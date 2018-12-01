@@ -23,9 +23,42 @@ async function pop() {
 
     const tool = await page.$eval('div.col-md-6.col-sm-7 > h3', e => e.innerHTML);
     console.log("★", tool)
-    
-    browser.close()
 
+    
+    const linkHandlers = await page.$x("//a[contains(text(), 'Natty Phatharamalai')]");
+    if (linkHandlers.length > 0) {
+        await linkHandlers[0].click();
+    } else {
+        throw new Error("Link not found");
+    }
+
+   // clickLinkText(page, "Natty")
+    
+    await page.waitForXPath("//a[contains(text(), 'Natty')]")
+    const linkHandlers2 = await page.$x(`//a[contains(text(), 'Natty')]`);
+
+    if (linkHandlers2.length > 0) {
+        await linkHandlers2[0].click();
+    } else {
+        throw new Error("Link not found");
+    }
+
+
+
+    await page.waitForXPath("//a[contains(text(), 'Read more')]")
+      
+    browser.close()
+}
+
+async function clickLinkText(page,linkText) {
+    await page.waitForXPath("//a[contains(text(), linkText)]")
+    const linkHandlers2 = await page.$x(`//a[contains(text(), ${linkText})]`);
+
+    if (linkHandlers2.length > 0) {
+        await linkHandlers2[0].click();
+    } else {
+        throw new Error("Link not found");
+    }
 }
 
 // describe('Open ProntoTools Website', () => {
