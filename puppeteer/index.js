@@ -23,7 +23,8 @@ async function pop(browser, page) {
 
     const tool = await page.$eval('div.col-md-6.col-sm-7 > h3', e => e.innerHTML);
     console.log("★", tool)
-
+    // const tool2 = await page.$x("//*[@id='footer']/div/div/div[1]/div[2]/h3");
+    // console.log("★", tool2)
     
     const linkHandlers = await page.$x("//a[contains(text(), 'Natty Phatharamalai')]");
     if (linkHandlers.length > 0) {
