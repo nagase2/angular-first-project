@@ -1,10 +1,10 @@
-
+var browser, page;
 pop();
 
-async function pop() {
+async function pop(browser, page) {
     const puppeteer = require('puppeteer');
 
-    var browser, page;
+ 
     var url = 'https://prontotools.io'
 
     browser = await puppeteer.launch({ headless: false });
@@ -32,33 +32,40 @@ async function pop() {
         throw new Error("Link not found");
     }
 
-   // clickLinkText(page, "Natty")
+   page = await clickLinkText(page, "Natty")
     
-    await page.waitForXPath("//a[contains(text(), 'Natty')]")
-    const linkHandlers2 = await page.$x(`//a[contains(text(), 'Natty')]`);
+    // await page.waitForXPath("//a[contains(text(), 'Natty')]")
+    // const linkHandlers2 = await page.$x(`//a[contains(text(), 'Natty')]`);
 
-    if (linkHandlers2.length > 0) {
-        await linkHandlers2[0].click();
-    } else {
-        throw new Error("Link not found");
-    }
+    // if (linkHandlers2.length > 0) {
+    //     await linkHandlers2[0].click();
+    // } else {
+    //     throw new Error("Link not found");
+    // }
 
 
 
-    await page.waitForXPath("//a[contains(text(), 'Read more')]")
-      
+    // await page.waitForXPath("//a[contains(text(), 'Read more')]")
+    await page.waitForNavigation({ waitUntil: 'load' })
+    
     browser.close()
 }
 
-async function clickLinkText(page,linkText) {
-    await page.waitForXPath("//a[contains(text(), linkText)]")
-    const linkHandlers2 = await page.$x(`//a[contains(text(), ${linkText})]`);
+/**
+ * 指定されたテキストを持つリンクが表示されるのを待ってクリックする。
+ * @param {*} mypage 
+ * @param {*} linkText 
+ */
+async function clickLinkText(mypage,linkText) {
+    await mypage.waitForXPath("//a[contains(text(), linkText)]")
+    const linkHandlers2 = await mypage.$x(`//a[contains(text(), ${linkText})]`);
 
     if (linkHandlers2.length > 0) {
         await linkHandlers2[0].click();
     } else {
         throw new Error("Link not found");
     }
+    return mypage
 }
 
 // describe('Open ProntoTools Website', () => {
