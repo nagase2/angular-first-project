@@ -1,40 +1,63 @@
 var browser, page;
 pop();
 
+//https://qiita.com/rh_taro/items/32bb6851303cbc613124#%E3%83%9A%E3%83%BC%E3%82%B8%E7%A7%BB%E5%8B%95
+
 async function pop(browser, page) {
     const puppeteer = require('puppeteer');
 
  
-    var url = 'https://prontotools.io'
+    var url = 'https://purecss.io/forms/'
 
     browser = await puppeteer.launch({ headless: false });
     page = await browser.newPage();
 
-    await page.goto(url);
+
+    await page.goto(url,{ waitUntil: "domcontentloaded" });
     const title = await page.title();
     console.log("title:", title)
-      
-    // < h2 class="font-34 uppercase" > <strong>Tools for Your Growing Business</strong></h2 >
-    const center = await page.$eval('h2.font-34.uppercase > strong', e => e.innerHTML);
-    console.log(center)
 
-    const phoenix = await page.$eval('div.feature-project > h3 > strong', e => e.innerHTML);
-    console.log("★",phoenix)
+    //
 
-    const tool = await page.$eval('div.col-md-6.col-sm-7 > h3', e => e.innerHTML);
-    console.log("★", tool)
-    // const tool2 = await page.$x("//*[@id='footer']/div/div/div[1]/div[2]/h3");
-    // console.log("★", tool2)
+    //#stacked-remember
+    //const tool2 = await page.$x("//*[@id='stacked-remember']")
+    page.click("#main > div.content > form:nth-child(7) > fieldset > label.pure-checkbox > input[type='checkbox']");
+    //#main > div.content > form:nth-child(7) > fieldset > label.pure-checkbox > input[type="checkbox"]
+    //id="stacked-state"
+
+
+    await page.select('#stacked-state', 'IL');
+
+    page.click('#menuLink');
+
     
-    //xPathで要素を検索
-    const linkHandlers = await page.$x("//a[contains(text(), 'Natty Phatharamalai')]");
-    if (linkHandlers.length > 0) {
-        await linkHandlers[0].click();
-    } else {
-        throw new Error("Link not found");
-    }
 
-   page = await clickLinkText(page, "Natty")
+
+//stacked-remember
+
+
+
+    // // < h2 class="font-34 uppercase" > <strong>Tools for Your Growing Business</strong></h2 >
+    // const center = await page.$eval('h2.font-34.uppercase > strong', e => e.innerHTML);
+    // console.log(center)
+
+    // const phoenix = await page.$eval('div.feature-project > h3 > strong', e => e.innerHTML);
+    // console.log("★",phoenix)
+
+    // const tool = await page.$eval('div.col-md-6.col-sm-7 > h3', e => e.innerHTML);
+    // console.log("★", tool)
+    // // const tool2 = await page.$x("//*[@id='footer']/div/div/div[1]/div[2]/h3");
+    // // console.log("★", tool2)
+    
+    // //xPathで要素を検索
+    // const linkHandlers = await page.$x("//a[contains(text(), 'Natty Phatharamalai')]");
+    // if (linkHandlers.length > 0) {
+    //     await linkHandlers[0].click();
+    // } else {
+    //     throw new Error("Link not found");
+    // }
+
+   //page = await clickLinkText(page, "Natty")
     
     // await page.waitForXPath("//a[contains(text(), 'Natty')]")
     // const linkHandlers2 = await page.$x(`//a[contains(text(), 'Natty')]`);
@@ -48,9 +71,10 @@ async function pop(browser, page) {
 
 
     // await page.waitForXPath("//a[contains(text(), 'Read more')]")
-    await page.waitForNavigation({ waitUntil: 'load' })
+   // await page.waitForNavigation({ waitUntil: 'load' })
     
-    browser.close()
+    //クローズ
+   // browser.close()
 }
 
 /**
